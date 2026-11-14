@@ -1,12 +1,17 @@
 {
-  "version": "2.9.4",
+  "version": "2.9.5",
   "date": "2026-11-14",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.4/Kobi-Setup.exe",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.4/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.4/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.5/Kobi-Setup.exe",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.5/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.5/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "\"Pausa a música\" pausa a música (não abre mais a rotina Pausa)",
-    "Pedir música sem conectar a conta do Spotify: o Kobi acha a música e toca direto no app (no Mac começa sozinha)"
+    "Mais rápido: percebe que você parou de falar ~1 s antes",
+    "IA responde em menos de 1 segundo na Groq (manda só as funções que importam)",
+    "Corrigido: a música às vezes não voltava ao volume de antes depois que ele falava",
+    "Dois pedidos numa frase (\"cria uma tarefa e me lembra às 18h\"): ele faz os dois",
+    "Se o modelo de IA escolhido sair do ar, ele troca sozinho por outro",
+    "Voz neural começa a falar mais rápido (fala a primeira frase enquanto prepara o resto)",
+    "Depois de você interromper, ele não reabre o microfone à toa"
   ]
 }
