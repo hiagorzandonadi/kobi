@@ -1,15 +1,12 @@
 {
-  "version": "2.9.1",
+  "version": "2.9.3",
   "date": "2026-11-14",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.1/Kobi-Setup.exe",
-  "urlMac": "https://hiagorzandonadi.github.io/kobi/",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.3/Kobi-Setup.exe",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.3/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.3/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Versão para Mac (Apple Silicon e Intel)",
-    "Kobi mais esperto: entende a intenção mesmo com palavras trocadas, faz vários pedidos de uma vez e confere se faz sentido",
-    "Nova aba Lembretes no entalho; \"mostra meus lembretes\" abre ela",
-    "Lembretes entendem horário: \"às 15h\", \"amanhã às 9\", \"às 8 da noite\", \"daqui a 2 horas\"",
-    "Pedir um cantor (\"toca Natanzinho Lima\") toca as músicas dele",
-    "\"Abre o Spotify e toca uma música\": se o Spotify estiver fechado, ele abre escondido e já toca"
+    "Mac: o Kobi fala com a voz do macOS (Luciana, em português)",
+    "Mac: atualização automática, ele baixa, instala e reabre sozinho (Mais → Atualizações)"
   ]
 }
