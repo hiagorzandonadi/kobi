@@ -1,13 +1,16 @@
 {
-  "version": "2.9.8",
+  "version": "2.9.9",
   "date": "2026-11-14",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.8/Kobi-Setup.exe",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.8/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.8/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.9/Kobi-Setup.exe",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.9/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.9/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Celular como microfone: escaneie o QR Code e fale com o Kobi pelo celular (\"só quando falar Kobi\" ou \"sempre ouvindo\")",
-    "Novo jeito de falar: segure o atalho (ou o 🎙️) enquanto fala e solte para ele responder",
-    "Corrigido: falar \"passagem\" não pula mais a música"
+    "Troca de IA grátis sozinho: se a Groq bater no limite, ele passa para o Gemini (ligue em Cérebro)",
+    "Esconde sozinho quando uma janela (ex.: abas do Chrome) está embaixo do entalho; volta quando você sai dela",
+    "Lembretes na tela inicial",
+    "Corrigido: pedir para aumentar o volume com música tocando abaixava o som",
+    "Corrigido: passar o mouse numa notificação deixava o entalho bugado",
+    "Celular: o botão do microfone abre a página segura sozinho e mostra o que falta"
   ]
 }
