@@ -1,0 +1,10 @@
+{
+  "version": "2.9.0",
+  "date": "2026-11-14",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.0/Kobi-Setup.exe",
+  "notes": [
+    "Primeira versão pública: download grátis no site",
+    "Atualizações automáticas: o Kobi avisa quando sai versão nova e instala com um clique (Mais → Atualizações)",
+    "Diga \"tá bom\", \"valeu\", \"obrigado\" ou \"beleza\" (mesmo interrompendo): ele para de falar e some"
+  ]
+}
