@@ -1,16 +1,18 @@
 {
-  "version": "2.9.9",
+  "version": "3.0.0",
   "date": "2026-11-14",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.9/Kobi-Setup.exe",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.9/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.9/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.0.0/Kobi-Setup.exe",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.0.0/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.0.0/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Troca de IA grátis sozinho: se a Groq bater no limite, ele passa para o Gemini (ligue em Cérebro)",
-    "Esconde sozinho quando uma janela (ex.: abas do Chrome) está embaixo do entalho; volta quando você sai dela",
-    "Lembretes na tela inicial",
-    "Corrigido: pedir para aumentar o volume com música tocando abaixava o som",
-    "Corrigido: passar o mouse numa notificação deixava o entalho bugado",
-    "Celular: o botão do microfone abre a página segura sozinho e mostra o que falta"
+    "Verificar meu PC: o Kobi examina com animação o que está travando (memória, processador, programas que abrem com o PC) e limpa os arquivos temporários",
+    "YouTube de verdade: \"abre um vídeo do Cariani no YouTube\" já abre e toca o vídeo",
+    "Ensine o Kobi: dê um nome (ex.: \"painel da TV\") e mostre o site, programa ou ícone — depois é só pedir \"abre o painel da TV\"",
+    "Volume sem erro: \"aumenta\" sempre aumenta, mesmo com a música abaixada enquanto ele fala; entende \"mais alto\", \"abaixa a música\", \"volume no máximo\"",
+    "Cérebro novo e simples: escolha \"Automático grátis\", \"Eu escolho a IA\" ou \"No meu PC\", com passo a passo para conectar",
+    "Reconhecimento de voz agora fica no Cérebro, com só duas opções",
+    "Celular só como microfone: o som do celular vai direto para o Kobi do PC",
+    "Relógio e próximo alarme se alternam no entalho com uma animação"
   ]
 }
