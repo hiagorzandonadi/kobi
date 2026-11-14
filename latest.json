@@ -1,12 +1,12 @@
 {
-  "version": "2.9.3",
+  "version": "2.9.4",
   "date": "2026-11-14",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.3/Kobi-Setup.exe",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.3/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.3/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.4/Kobi-Setup.exe",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.4/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.4/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Mac: o Kobi fala com a voz do macOS (Luciana, em português)",
-    "Mac: atualização automática, ele baixa, instala e reabre sozinho (Mais → Atualizações)"
+    "\"Pausa a música\" pausa a música (não abre mais a rotina Pausa)",
+    "Pedir música sem conectar a conta do Spotify: o Kobi acha a música e toca direto no app (no Mac começa sozinha)"
   ]
 }
