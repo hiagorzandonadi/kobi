@@ -1,15 +1,13 @@
 {
-  "version": "2.9.7",
+  "version": "2.9.8",
   "date": "2026-11-14",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.7/Kobi-Setup.exe",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.7/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.7/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.8/Kobi-Setup.exe",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.8/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v2.9.8/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Kobi no celular todo novo: o Kobi animado, conversa com balões, botão de falar e ele responde em voz alta",
-    "Celular: abas de Tarefas, Lembretes (com atalhos 10 min / 1 hora), Música do PC e status do PC",
-    "Em Celular e agendas aparece \"Conectado\" para o Kobi no celular, a agenda do iPhone e o Google Agenda",
-    "Celular: conversa contínua (depois de responder ele já te escuta) e a mesma conversa do PC",
-    "Opção de relógio sempre visível no entalho"
+    "Celular como microfone: escaneie o QR Code e fale com o Kobi pelo celular (\"só quando falar Kobi\" ou \"sempre ouvindo\")",
+    "Novo jeito de falar: segure o atalho (ou o 🎙️) enquanto fala e solte para ele responder",
+    "Corrigido: falar \"passagem\" não pula mais a música"
   ]
 }
