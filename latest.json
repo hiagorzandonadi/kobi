@@ -1,14 +1,23 @@
 {
-  "version": "3.1.0",
+  "version": "3.2.0",
   "date": "2026-11-14",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.1.0/Kobi-Setup.exe",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.1.0/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.1.0/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.2.0/Kobi-Setup.exe",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.2.0/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.2.0/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Proteção com rosto (opcional): ao ligar o PC o Kobi aparece, te reconhece pela webcam e libera — funciona sem internet",
-    "Senha de números de reserva, para quando a câmera não der",
-    "Pode pedir também ao desbloquear o Windows ou voltar da suspensão",
-    "Seu rosto e a senha ficam só no seu PC, criptografados"
+    "Memória em mapa (estilo Obsidian): suas lembranças ligadas por assunto; dá para arrastar, buscar e marcar como importante",
+    "Cérebro trabalhando: quando você pergunta algo que ele sabe, o entalho mostra o mapa procurando e acende a lembrança",
+    "Guarda sozinho o que é importante (\"minha namorada se chama Ana\", \"eu moro em Curitiba\")",
+    "Aprende seus pedidos repetidos e passa a fazer na hora",
+    "Pesquisa e estuda na internet escondido (sem abrir aba) e entrega um resumo com as fontes",
+    "Cria PDFs: \"faz um PDF com…\" — ele escreve, monta, salva em Documentos/Kobi e abre",
+    "Abre vídeos e sites no monitor que você pedir (\"no monitor 2\", \"na outra tela\")",
+    "Downloads no entalho: Ollama/cérebro com %, e os downloads do navegador com tamanho e velocidade",
+    "IA do PC configura sozinha com 1 clique e vira híbrida: usa a internet (nuvem grátis) quando precisa",
+    "Ícone no entalho quando o celular está sendo usado como microfone",
+    "Acende na hora em que ouve \"Kobi\"",
+    "Corrigido: segurar o 🎙️ com o mouse às vezes ficava ouvindo sem parar",
+    "Corrigido: as pesquisas na internet estavam sendo bloqueadas — agora funcionam"
   ]
 }
