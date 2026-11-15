@@ -1,14 +1,13 @@
 {
-  "version": "3.3.9",
+  "version": "3.4.0",
   "date": "2026-11-15",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.9/Kobi-Setup.exe",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.4.0/Kobi-Setup.exe",
   "macVersion": "3.3.0",
   "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Mac-arm64.dmg",
   "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Arraste o entalho para o monitor 2: ele lembra onde você deixou",
-    "Modo desempenho, modo só executar e botão de cancelar enquanto ele pensa",
-    "Ativação com chave nas instalações novas (quem já usava continua liberado)"
+    "Novo visual Aurora (opcional): borda de luz animada, brilho colorido e painel de vidro. Ligue em Configurações → Entalho → Visual",
+    "Tela de ativação mais clara: mostra onde achar a sua chave"
   ]
 }
