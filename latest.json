@@ -1,13 +1,13 @@
 {
-  "version": "3.5.2",
-  "date": "2026-11-15",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.2/Kobi-Setup.exe",
-  "macVersion": "3.5.1",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.1/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.1/Kobi-Mac-x64.dmg",
-  "page": "https://hiagorzandonadi.github.io/kobi/",
-  "notes": [
-    "Novo: Modo ditado preciso (Voz): tudo que você fala passa pelo Whisper completo e ele espera você terminar, sem cortar a frase. O \"Ei, Kobi\" fica mais certeiro",
-    "Botão para esquecer jeitos de chamar aprendidos errado (quando ele acorda sozinho ou corta sua fala)"
-  ]
+    "version":  "3.5.2",
+    "date":  "2026-11-15",
+    "url":  "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.2/Kobi-Setup.exe",
+    "macVersion":  "3.5.2",
+    "urlMacArm64":  "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.2/Kobi-Mac-arm64.dmg",
+    "urlMacX64":  "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.2/Kobi-Mac-x64.dmg",
+    "page":  "https://hiagorzandonadi.github.io/kobi/",
+    "notes":  [
+                  "Novo: Modo ditado preciso (Voz): tudo que você fala passa pelo Whisper completo e ele espera você terminar, sem cortar a frase. O \"Ei, Kobi\" fica mais certeiro",
+                  "Botão para esquecer jeitos de chamar aprendidos errado (quando ele acorda sozinho ou corta sua fala)"
+              ]
 }
