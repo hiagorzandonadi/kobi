@@ -1,21 +1,14 @@
 {
-  "version": "3.3.0",
+  "version": "3.3.1",
   "date": "2026-11-15",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Setup.exe",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.1/Kobi-Setup.exe",
+  "macVersion": "3.3.0",
   "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Mac-arm64.dmg",
   "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Conversa fluida: espera você terminar de falar e junta a frase quando você continua — uma pergunta, uma resposta",
-    "Não se interrompe mais ouvindo a própria voz (para interromper: \"Kobi, para\" ou \"chega\")",
-    "Apertar o atalho enquanto ele fala cala na hora",
-    "Música: pausa enquanto ele te ouve e volta sozinha (ou só abaixa, você escolhe em Voz) — ele não confunde mais a letra com a sua voz",
-    "Com música tocando, \"Ei Kobi\" é conferido com o reconhecimento bom; a letra não acende mais",
-    "A música nunca mais fica baixa: se algo travar, o volume volta sozinho",
-    "Avisos automáticos (memória cheia, água…) não falam nem ficam ouvindo, e aparecem bem menos",
-    "Passe o mouse enquanto ele fala: aparece o texto inteiro e as fontes da pesquisa",
-    "\"Tenho tarefa pendente?\" mostra as tarefas num cartão",
-    "Monitor 2 funcionando de verdade (abre no navegador que você está usando)",
-    "Corrigido: \"coloca um timer\" tocava música; \"me lembra em quinze minutos\" ficava com nome errado"
+    "Celular: botão \"Liberar o celular\" em Celular e agendas quando o Firewall do Windows bloqueia o microfone/página do celular",
+    "A versão portátil abre sempre da mesma pasta (o Windows pergunta uma vez só)",
+    "A barra de volume da tela inicial não some mais quando você coloca uma música"
   ]
 }
