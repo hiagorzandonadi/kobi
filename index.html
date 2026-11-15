@@ -5,7 +5,7 @@
 <meta name="theme-color" content="#0D0E1A">
 <title>Kobi</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Kobi: o assistente que mora no topo da tela do seu PC. Fala com você, toca suas músicas e cuida do seu dia. Pagamento único de R$ 68,99, sem mensalidade e com IA grátis.">
+<meta name="description" content="Kobi: o assistente que mora no topo da tela do seu PC. Fala com você, toca suas músicas e cuida do seu dia. Pagamento único de R$ 89,90, sem mensalidade e com IA grátis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
 <style>
@@ -240,7 +240,12 @@
   .urg .wrap { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; justify-content: center; padding-block: 10px; text-align: center; }
   .urg b { color: var(--warn); }
   .urg .cd { font: 700 17px var(--font-mono); color: var(--warn); background: #00000055; border: 1px solid #FFB34066; border-radius: 10px; padding: 3px 10px; font-variant-numeric: tabular-nums; }
-  .urg small { display: block; width: 100%; color: var(--mist); font-size: 13px; }
+  .urg small { display: block; width: 100%; color: var(--mist); font-size: 13.5px; }
+  .urg .wrap { padding-block: 16px 14px; gap: 6px 18px; }
+  .urg .big { display: block; width: 100%; font: 800 clamp(28px, 5.4vw, 48px)/1.05 var(--font-display); color: var(--warn); text-transform: uppercase; letter-spacing: .01em; text-shadow: 0 0 28px #FFB34055; animation: lote 1.8s ease-in-out infinite; }
+  .urg .sub { display: block; width: 100%; font-size: clamp(15.5px, 2.2vw, 19px); font-weight: 600; }
+  @keyframes lote { 0%,100% { transform: scale(1) } 50% { transform: scale(1.035) } }
+  @media (prefers-reduced-motion: reduce) { .urg .big { animation: none; } }
   #logoKobi { transition: opacity .25s; }
   #buddy { position: fixed; left: 0; top: 0; z-index: 60; width: 46px; height: 46px; pointer-events: none; opacity: 0; transition: opacity .3s; will-change: transform; }
   #buddy.on { opacity: 1; }
@@ -257,14 +262,15 @@
 </style>
 
 <div class="urg" id="urg"><div class="wrap">
-  <span>🔥 <b>Lote final:</b> liberamos só mais <b>50 acessos</b> por <b>R$ 68,99</b>. Quando acabarem, o preço passa para <b>R$ 679,99</b>.</span>
-  <small>Muita gente pediu porque só viu agora. Não dá para manter o preço antigo: quanto mais usuários, mais suporte, e isso tem custo. Pagamento único, sem mensalidade.</small>
+  <span class="big">🔥 Último lote disponível</span>
+  <span class="sub">Só <b>50 acessos</b> por <b>R$ 89,90</b>, vitalício e com <b>IA grátis</b>. Quando esgotar, o Kobi passa a ser por <b>mensalidade</b>.</span>
+  <small>Quem compra agora paga uma vez só e fica com ele para sempre, com as atualizações incluídas.</small>
 </div></div>
 
 <header class="nav"><div class="wrap">
   <a class="brand" href="#topo"><span id="logoKobi"></span>Kobi</a>
   <nav><a href="#demo">Demonstração</a><a href="#funcoes">Funções</a><a href="#instalar">Instalar</a><a href="#preco">Preço</a><a href="#duvidas">Dúvidas</a></nav>
-  <button class="btn btn-primary" data-buy>Comprar · R$ 68,99</button>
+  <button class="btn btn-primary" data-buy>Comprar · R$ 89,90</button>
 </div></header>
 
 <main id="topo">
@@ -272,8 +278,8 @@
     <div class="eyebrow">para Windows e Mac · versão 3.5.0</div>
     <h1>Um amigo que mora no <em>topo da sua tela</em>.</h1>
     <p class="lead">O Kobi vive no entalho do seu PC. Diga "Ei, Kobi" e ele toca suas músicas, marca seus lembretes, cuida das tarefas e conversa com você. Já vem com IA gratuita: você paga uma vez só e nunca mais paga nada, nem mensalidade, nem assinatura.</p>
-    <div class="ctas"><button class="btn btn-primary" data-buy>Comprar o Kobi · R$ 68,99</button><a class="btn btn-ghost" href="#funcoes">Ver o que ele faz</a></div>
-    <div class="price-note"><b>Pagamento único de R$ 68,99.</b> Sem mensalidade · IA grátis incluída · atualizações incluídas · Windows 10 e 11.</div>
+    <div class="ctas"><button class="btn btn-primary" data-buy>Comprar o Kobi · R$ 89,90</button><a class="btn btn-ghost" href="#funcoes">Ver o que ele faz</a></div>
+    <div class="price-note"><b>Pagamento único de R$ 89,90.</b> Sem mensalidade · IA grátis incluída · atualizações incluídas · Windows 10 e 11.</div>
 
     <div class="desk" id="desk">
       <div class="notch" id="notch" aria-label="Entalho do Kobi: passe o mouse ou toque para abrir">
@@ -350,7 +356,7 @@
     <div class="sec-head"><h2>Seu PC, suas coisas.</h2><p>Suas tarefas, notas e conversas ficam no seu computador.</p></div>
     <div class="stats">
       <div class="stat"><b>0</b><span>contas para criar. É instalar e usar.</span></div>
-      <div class="stat"><b>R$ 0</b><span>de mensalidade. Você paga R$ 68,99 uma vez só.</span></div>
+      <div class="stat"><b>R$ 0</b><span>de mensalidade. Você paga R$ 89,90 uma vez só.</span></div>
       <div class="stat"><b>100%</b><span>offline para voz e IA local, se você quiser.</span></div>
       <div class="stat"><b>~110 MB</b><span>de instalador, com a voz em português incluída.</span></div>
     </div>
@@ -385,10 +391,10 @@
   <section id="preco"><div class="wrap pricing">
     <div class="ticket">
       <div class="tag">kobi · licença vitalícia</div>
-      <div class="amount"><b>R$ 68,99</b></div>
+      <div class="amount"><b>R$ 89,90</b></div>
       <div class="once">Pagamento único. Pagou, é seu para sempre.</div>
       <ul><li>Todas as funções, sem planos nem limites</li><li>Voz offline com "Ei, Kobi" e voz fofinha de robô</li><li>IA gratuita incluída, sem mensalidade nem assinatura</li><li>Atualizações incluídas, com aviso quando sair versão nova</li><li>Instalador para Windows 10 e 11</li></ul>
-      <button class="btn btn-primary" data-buy>Comprar por R$ 68,99</button>
+      <button class="btn btn-primary" data-buy>Comprar por R$ 89,90</button>
       <div class="fine">PIX ou cartão · o link de download chega no seu e-mail</div>
     </div>
     <dl class="specs">
@@ -402,7 +408,7 @@
   <section id="duvidas"><div class="wrap">
     <div class="sec-head"><h2>Dúvidas</h2></div>
     <div class="faq">
-      <details><summary>Tem mensalidade?</summary><p>Não. Você paga R$ 68,99 uma vez só e o Kobi é seu, com as atualizações incluídas. Não tem plano, assinatura nem cobrança todo mês.</p></details>
+      <details><summary>Tem mensalidade?</summary><p>Não. Você paga R$ 89,90 uma vez só e o Kobi é seu, com as atualizações incluídas. Não tem plano, assinatura nem cobrança todo mês.</p></details>
       <details><summary>Como eu recebo o Kobi?</summary><p>Depois que o pagamento é aprovado (no PIX é na hora), você recebe no seu e-mail o link para baixar o instalador, com o passo a passo para ativar na primeira vez que abrir. Se não achar o e-mail, olhe a caixa de spam.</p></details>
       <details><summary>Preciso pagar alguma IA?</summary><p>Não. O Kobi já vem com IA gratuita, sem mensalidade. Ele pode usar uma IA que roda no seu PC. Se quiser, também pode conectar o Claude, o ChatGPT, o Gemini ou o Groq com a sua chave; nesse caso, o uso é cobrado pela empresa da IA (Gemini e Groq têm cota grátis).</p></details>
       <details><summary>Ele fica ouvindo tudo o que eu falo?</summary><p>O modo "sempre ouvindo" é opcional. Quando ligado, o reconhecimento acontece no seu computador e o Kobi só reage quando você diz "Ei, Kobi".</p></details>
@@ -412,7 +418,7 @@
     </div>
   </div></section>
 
-  <div class="wrap final"><h2>Seu PC fica mais legal com o Kobi lá em cima.</h2><button class="btn btn-primary" data-buy>Comprar o Kobi · R$ 68,99</button></div>
+  <div class="wrap final"><h2>Seu PC fica mais legal com o Kobi lá em cima.</h2><button class="btn btn-primary" data-buy>Comprar o Kobi · R$ 89,90</button></div>
 </main>
 
 <footer><div class="wrap"><span>Kobi · seu assistente no topo da tela · contato: direct no Instagram <a id="contact" href="https://instagram.com/kobi.ia" target="_blank" rel="noopener" style="color:inherit;font-weight:600">@kobi.ia</a></span><span>Usa software livre: Vosk (Apache 2.0), Piper (MIT), Electron (MIT). Windows e Spotify são marcas de seus donos.</span></div></footer>
@@ -673,7 +679,7 @@
   const modal = document.getElementById('modal'), mstep = document.getElementById('mstep');
   let method = 'pix';
   function step1() {
-    mstep.innerHTML = `<div style="display:flex;gap:14px;align-items:center">${K(64, 'love', 'buy')}<div><h3 id="mt">Kobi · licença vitalícia</h3><div style="color:var(--mist)">Pagamento único de <b style="color:var(--ink)">R$ 68,99</b></div></div></div>
+    mstep.innerHTML = `<div style="display:flex;gap:14px;align-items:center">${K(64, 'love', 'buy')}<div><h3 id="mt">Kobi · licença vitalícia</h3><div style="color:var(--mist)">Pagamento único de <b style="color:var(--ink)">R$ 89,90</b></div></div></div>
       <div class="methods"><button class="method${method === 'pix' ? ' on' : ''}" data-m="pix"><b>PIX</b><span>Aprovação na hora</span></button><button class="method${method === 'card' ? ' on' : ''}" data-m="card"><b>Cartão</b><span>Crédito ou débito</span></button></div>
       <div class="paybox" id="paybox"></div>`;
     renderPay();
@@ -689,7 +695,7 @@
       <button class="btn btn-ghost" id="copy" style="width:100%">Copiar chave PIX</button>
       <div class="field"><label for="buyer">Seu e-mail para receber o Kobi</label><input id="buyer" type="email" placeholder="voce@email.com" autocomplete="email"></div>
       <button class="btn btn-primary" id="paid" style="width:100%">Já paguei</button>
-      <div class="fine" id="pmsg">Depois de pagar R$ 68,99, toque em "Já paguei".</div>`;
+      <div class="fine" id="pmsg">Depois de pagar R$ 89,90, toque em "Já paguei".</div>`;
     if (PIX_KEY && window.QRCode) new QRCode(document.getElementById('pixqr'), { text: PIX_KEY, width: 160, height: 160 });
   }
   function stepDownload() {
@@ -702,7 +708,7 @@
       <div class="fine" style="margin-top:14px"><b>Windows:</b> se aparecer "O Windows protegeu o computador", clique em <b>Mais informações → Executar assim mesmo</b>.<br><b>Mac:</b> abra o .dmg, arraste o Kobi para Aplicativos e, na primeira vez, clique nele com o <b>botão direito → Abrir</b>. Se o Mac não deixar, vá em <b>Ajustes do Sistema → Privacidade e Segurança → Abrir Mesmo Assim</b>. Isso acontece com apps novos ainda sem assinatura da Apple.</div>`;
   }
   function stepCheckout() {
-    mstep.innerHTML = `<div style="display:flex;gap:14px;align-items:center">${K(64, 'love', 'buy')}<div><h3 id="mt">Kobi · licença vitalícia</h3><div style="color:var(--mist)">Pagamento único de <b style="color:var(--ink)">R$ 68,99</b> · sem mensalidade</div></div></div>
+    mstep.innerHTML = `<div style="display:flex;gap:14px;align-items:center">${K(64, 'love', 'buy')}<div><h3 id="mt">Kobi · licença vitalícia</h3><div style="color:var(--mist)">Pagamento único de <b style="color:var(--ink)">R$ 89,90</b> · sem mensalidade</div></div></div>
       <div style="display:grid;gap:10px;margin-top:18px">${/^https:/.test(CHECKOUT_URL) ? `<a class="btn btn-primary" style="width:100%" href="${esc(CHECKOUT_URL)}" target="_blank" rel="noopener">Pagar com PIX ou cartão</a>` : '<div class="fine">As vendas abrem em instantes. Volte daqui a pouco.</div>'}</div>
       <div class="fine" style="margin-top:14px">O pagamento é feito na Cakto, com segurança. Assim que for aprovado, o link para baixar o Kobi chega no seu e-mail.</div>`;
   }
@@ -739,8 +745,8 @@
     const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
     const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const cheap = Date.now() < new Date('2026-11-15T19:00:00-03:00').getTime();
-    const LINES = ['Compra… compra… 👀', 'Psiu! R$ 68,99 uma vez só', 'Sem mensalidade, hein!', 'Tô te seguindo, percebeu? 😄', 'Me leva pra casa 🥺', 'Prometo não pedir aumento', 'Eu toco suas músicas 🎵', 'O botão verde não morde…', 'Já me imaginou no seu PC?', 'Pode me chamar de Sexta-Feira 😎', 'Compra… compra… compra…', 'Eu lembro seus compromissos. Lembra de me comprar? 😏', 'Sou fofo E útil. Raro, né?']
-      .concat(['Só mais 50 acessos nesse preço! 🔥']);
+    const LINES = ['Compra… compra… 👀', 'Psiu! R$ 89,90 uma vez só', 'Sem mensalidade, hein!', 'Tô te seguindo, percebeu? 😄', 'Me leva pra casa 🥺', 'Prometo não pedir aumento', 'Eu toco suas músicas 🎵', 'O botão verde não morde…', 'Já me imaginou no seu PC?', 'Pode me chamar de Sexta-Feira 😎', 'Compra… compra… compra…', 'Eu lembro seus compromissos. Lembra de me comprar? 😏', 'Sou fofo E útil. Raro, né?']
+      .concat(['Último lote: só 50 acessos! 🔥']);
     let li = Math.floor(Math.random() * LINES.length), bubT = 0, forced = false;
     const say = (t, ms) => { bub.textContent = t; el.classList.add('talk'); clearTimeout(bubT); bubT = setTimeout(() => { el.classList.remove('talk'); forced = false; }, ms || 3200); };
     setInterval(() => { if (el.classList.contains('on') && !forced) { say(LINES[li++ % LINES.length]); } }, 5200);
