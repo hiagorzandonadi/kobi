@@ -1,14 +1,14 @@
 {
-  "version": "3.3.7",
+  "version": "3.3.8",
   "date": "2026-11-15",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.7/Kobi-Setup.exe",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.8/Kobi-Setup.exe",
   "macVersion": "3.3.0",
   "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Mac-arm64.dmg",
   "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Celular: botão \"Liberar o celular\" em Celular e agendas quando o Firewall do Windows bloqueia o microfone/página do celular",
-    "A versão portátil abre sempre da mesma pasta (o Windows pergunta uma vez só)",
-    "A barra de volume da tela inicial não some mais quando você coloca uma música"
+    "Arraste o entalho para o monitor 2: ele lembra onde você deixou",
+    "Modo desempenho, modo só executar e botão de cancelar enquanto ele pensa",
+    "Ativação com chave nas instalações novas (quem já usava continua liberado)"
   ]
 }
