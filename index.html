@@ -249,6 +249,11 @@
   #buddy .bd-bub { position: absolute; left: 50px; top: -26px; white-space: nowrap; max-width: 260px; background: var(--ink); color: var(--night); font: 700 13px/1.3 var(--font-body); padding: 7px 11px; border-radius: 14px 14px 14px 4px; box-shadow: 0 8px 22px rgba(0,0,0,.35); opacity: 0; transform: translateY(6px) scale(.9); transform-origin: left bottom; transition: opacity .2s, transform .2s; }
   #buddy.left .bd-bub { left: auto; right: 50px; border-radius: 14px 14px 4px 14px; transform-origin: right bottom; }
   #buddy.talk .bd-bub { opacity: 1; transform: none; }
+  #buddy .bd-chair { position: absolute; left: -8px; top: 14px; width: 60px; height: 50px; opacity: 0; transform: translate(16px, -4px) scale(.1) rotate(-40deg); transform-origin: 30px 6px; transition: opacity .25s, transform .45s cubic-bezier(.3,1.6,.5,1); }
+  #buddy .bd-body { position: relative; transition: margin .45s cubic-bezier(.3,1.6,.5,1); }
+  #buddy.chill .bd-chair { opacity: 1; transform: none; transition-delay: .1s; }
+  #buddy.chill .bd-body { margin: 6px 0 0 4px; transition-delay: .35s; }
+  #buddy.chill .bd-body svg { transform: rotate(-24deg); transition: transform .4s .35s; }
 </style>
 
 <div class="urg" id="urg" hidden><div class="wrap">
@@ -734,9 +739,16 @@
   (function buddy() {
     const logo = document.getElementById('logoKobi'), desk = document.querySelector('.desk');
     const el = document.createElement('div'); el.id = 'buddy'; el.setAttribute('aria-hidden', 'true');
-    el.innerHTML = `<div class="bd-body"></div><div class="bd-bub"></div>`;
+    el.innerHTML = `<svg class="bd-chair" viewBox="0 0 60 50" aria-hidden="true"><g stroke="#8a5a2b" stroke-width="3" stroke-linecap="round"><line x1="10" y1="48" x2="40" y2="14"/><line x1="44" y1="48" x2="22" y2="26"/><line x1="8" y1="34" x2="50" y2="34"/></g><path d="M14 30 L40 12 L46 18 L22 34 Z" fill="#ff7ac8"/><path d="M18 27 L42 10 M22 30 L45 14" stroke="#fff" stroke-width="2.5" opacity=".85"/></svg><div class="bd-body"></div><div class="bd-bub"></div>`;
     document.body.appendChild(el);
     const body = el.querySelector('.bd-body'), bub = el.querySelector('.bd-bub');
+    let chilling = false;
+    const CHILL = ['Vou esperar aqui 🏖️', 'Me chama quando sair daí 😎', 'Pausa merecida ☀️', 'Pode explorar, eu espero 🍹'];
+    function chill(on) {
+      if (on === chilling) return; chilling = on;
+      el.classList.toggle('chill', on); setMood(on ? 'cool' : 'happy');
+      if (on) { forced = true; say(CHILL[Math.floor(Math.random() * CHILL.length)], 2600); }
+    }
     let mood = '';
     const setMood = (m) => { if (m !== mood) { mood = m; body.innerHTML = KOBI.svg({ size: 46, mood: m, uid: 'bd' + m }); } };
     setMood('happy');
@@ -770,16 +782,19 @@
     (function frame(now) {
       const dt = Math.min(50, now - t0); t0 = now;
       let tx, ty;
+      if (!out || !fine || calm) chill(false);
       if (!out) { [tx, ty] = home(); }
       else if (fine && !calm) {
         tx = mx + 26; ty = my + 18;
-        // não entra no quadro da demonstração: fica rodando pela borda de fora
-        const d = desk && desk.getBoundingClientRect(), m = 8, s = 46;
-        if (d && tx + s > d.left - m && tx < d.right + m && ty + s > d.top - m && ty < d.bottom + m) {
-          const opts = [[d.left - m - s - tx, 0], [d.right + m - tx, 0], [0, d.top - m - s - ty], [0, d.bottom + m - ty]];
-          const [ox, oy] = opts.reduce((a, b) => (Math.hypot(...b) < Math.hypot(...a) ? b : a));
-          tx += ox; ty += oy;
+        // mouse dentro do quadro da demonstração: ele vai pro canto de fora, tira a cadeira de praia e descansa
+        const d = desk && desk.getBoundingClientRect();
+        const inside = d && mx > d.left && mx < d.right && my > d.top && my < d.bottom;
+        if (inside) {
+          const roomRight = innerWidth - d.right > 70;
+          tx = roomRight ? d.right + 12 : d.left - 58; ty = Math.min(d.bottom, innerHeight) - 56;
+          if (!roomRight && d.left < 70) { tx = innerWidth - 70; }
         }
+        chill(inside && Math.hypot(tx - x, ty - y) < 30);
       }
       else { tx = 14; ty = innerHeight - 74; }
       tx = Math.max(6, Math.min(innerWidth - 56, tx)); ty = Math.max(6, Math.min(innerHeight - 56, ty));
@@ -787,7 +802,8 @@
       const dx = (tx - x) * k; x += dx; y += (ty - y) * k;
       if (Math.abs(dx) > 0.6) face = dx > 0 ? 1 : -1;
       tilt += (Math.max(-18, Math.min(18, dx * 2)) - tilt) * 0.2;
-      const bob = calm || !out ? 0 : Math.sin(now / 260) * 4;
+      const bob = calm || !out || chilling ? 0 : Math.sin(now / 260) * 4;
+      if (chilling) { face = 1; tilt = 0; }
       el.style.transform = `translate(${x}px, ${y + bob}px)`;
       body.style.transform = `scaleX(${face}) rotate(${tilt * face}deg)`;
       el.classList.toggle('left', x > innerWidth - 230);
