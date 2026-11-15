@@ -1,13 +1,15 @@
 {
-  "version": "3.4.0",
+  "version": "3.4.1",
   "date": "2026-11-15",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.4.0/Kobi-Setup.exe",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.4.1/Kobi-Setup.exe",
   "macVersion": "3.3.0",
   "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Mac-arm64.dmg",
   "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Novo visual Aurora (opcional): borda de luz animada, brilho colorido e painel de vidro. Ligue em Configurações → Entalho → Visual",
-    "Tela de ativação mais clara: mostra onde achar a sua chave"
+    "WhatsApp: \"manda no zap pra Mãe: chego às 20h\". Ele confirma com você antes e envia pelo WhatsApp do PC",
+    "Contatos: \"salva o número da Maria: 11 91234-5678\" e \"quais contatos eu tenho?\"",
+    "Tradução consertada (estava devolvendo frases erradas) e agora traduz de qualquer idioma",
+    "Cotação do bitcoin voltou a funcionar"
   ]
 }
