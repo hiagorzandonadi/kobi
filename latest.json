@@ -1,14 +1,13 @@
 {
-    "version":  "3.5.1",
-    "date":  "2026-11-15",
-    "url":  "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.1/Kobi-Setup.exe",
-    "macVersion":  "3.5.1",
-    "urlMacArm64":  "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.1/Kobi-Mac-arm64.dmg",
-    "urlMacX64":  "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.1/Kobi-Mac-x64.dmg",
-    "page":  "https://hiagorzandonadi.github.io/kobi/",
-    "notes":  [
-                  "Atualizações agora têm aba própria no painel (com aviso NOVA) e aparecem no entalho: \"Atualização · clique aqui\"",
-                  "Aba Integrações de volta: Webhooks (Zapier, Make, IFTTT, n8n), Todoist, Home Assistant (\"liga a luz da sala\") e Telegram",
-                  "Vozes de volta: estilos Locutor, Robô clássico, Esquilo, Gigante e Radinho, e a voz Tuga (sotaque de Portugal)"
-              ]
+  "version": "3.5.2",
+  "date": "2026-11-15",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.2/Kobi-Setup.exe",
+  "macVersion": "3.5.1",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.1/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.1/Kobi-Mac-x64.dmg",
+  "page": "https://hiagorzandonadi.github.io/kobi/",
+  "notes": [
+    "Novo: Modo ditado preciso (Voz): tudo que você fala passa pelo Whisper completo e ele espera você terminar, sem cortar a frase. O \"Ei, Kobi\" fica mais certeiro",
+    "Botão para esquecer jeitos de chamar aprendidos errado (quando ele acorda sozinho ou corta sua fala)"
+  ]
 }
