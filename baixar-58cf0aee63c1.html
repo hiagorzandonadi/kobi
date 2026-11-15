@@ -7,5 +7,9 @@ a.b{display:block;text-align:center;padding:14px 18px;border-radius:12px;text-de
 <h1>Obrigado pela compra! 💚</h1><p>Seu Kobi é seu para sempre, com as atualizações incluídas. Baixe aqui:</p>
 <a class="b p" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Setup.exe">⬇ Instalador para Windows (recomendado)</a>
 <a class="b" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Portable.exe">Versão portátil (sem instalar)</a>
+<h2 style="font-size:17px;margin:24px 0 6px">🔑 Sua chave de ativação</h2><p style="margin:0 0 8px">Na primeira vez que abrir, o Kobi pede esta chave. Copie e cole lá:</p>
+<div id="k" style="background:#0b0d12;border:1px solid #2a3242;border-radius:12px;padding:12px;font:13px/1.45 Consolas,monospace;word-break:break-all;user-select:all">KOBI-CGS2T2-GVYNFX-3C6GVB-R43X31-1AAX2M-F9ZR47-9H7D5N-RQK6NX-W1C2A2-QEK8H0-D3N1TD-FF2ZRB-P1EMPJ-HAE3RN-F31EKY-YV997P-MZT3M9-65YV8J-670E</div>
+<a class="b" href="#" id="cp">Copiar chave</a>
+<script>document.getElementById('cp').onclick=async(e)=>{e.preventDefault();try{await navigator.clipboard.writeText(document.getElementById('k').textContent);e.target.textContent='Chave copiada ✓';}catch{const r=document.createRange();r.selectNodeContents(document.getElementById('k'));const s=getSelection();s.removeAllRanges();s.addRange(r);e.target.textContent='Selecionei: aperte Ctrl+C';}};</script>
 <div class="f"><b>Windows 10 e 11, 64 bits.</b> Se aparecer "O Windows protegeu o computador", clique em <b>Mais informações → Executar assim mesmo</b>. Isso acontece com apps novos.<br><br>Guarde este e-mail: o link continua valendo. O próprio Kobi avisa quando sai versão nova.</div>
 </div></body></html>
