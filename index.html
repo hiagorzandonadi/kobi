@@ -241,6 +241,14 @@
   .urg b { color: var(--warn); }
   .urg .cd { font: 700 17px var(--font-mono); color: var(--warn); background: #00000055; border: 1px solid #FFB34066; border-radius: 10px; padding: 3px 10px; font-variant-numeric: tabular-nums; }
   .urg small { display: block; width: 100%; color: var(--mist); font-size: 13px; }
+  #logoKobi { transition: opacity .25s; }
+  #buddy { position: fixed; left: 0; top: 0; z-index: 60; width: 46px; height: 46px; pointer-events: none; opacity: 0; transition: opacity .3s; will-change: transform; }
+  #buddy.on { opacity: 1; }
+  #buddy .bd-body { width: 46px; height: 46px; filter: drop-shadow(0 6px 14px rgba(0,0,0,.45)); }
+  #buddy .bd-body svg { display: block; width: 46px; height: 46px; }
+  #buddy .bd-bub { position: absolute; left: 50px; top: -26px; white-space: nowrap; max-width: 260px; background: var(--ink); color: var(--night); font: 700 13px/1.3 var(--font-body); padding: 7px 11px; border-radius: 14px 14px 14px 4px; box-shadow: 0 8px 22px rgba(0,0,0,.35); opacity: 0; transform: translateY(6px) scale(.9); transform-origin: left bottom; transition: opacity .2s, transform .2s; }
+  #buddy.left .bd-bub { left: auto; right: 50px; border-radius: 14px 14px 4px 14px; transform-origin: right bottom; }
+  #buddy.talk .bd-bub { opacity: 1; transform: none; }
 </style>
 
 <div class="urg" id="urg" hidden><div class="wrap">
@@ -406,7 +414,7 @@
     <div class="sec-head"><h2>Dúvidas</h2></div>
     <div class="faq">
       <details><summary>Tem mensalidade?</summary><p>Não. Você paga R$ 39,90 uma vez só e o Kobi é seu, com as atualizações incluídas. Não tem plano, assinatura nem cobrança todo mês.</p></details>
-      <details><summary>Como eu recebo o Kobi?</summary><p>Depois que o pagamento é aprovado (no PIX é na hora), você recebe no seu e-mail o link para baixar o instalador e a sua chave de ativação. Na primeira vez que abrir, é só colar a chave. Se não achar o e-mail, olhe a caixa de spam.</p></details>
+      <details><summary>Como eu recebo o Kobi?</summary><p>Depois que o pagamento é aprovado (no PIX é na hora), você recebe no seu e-mail o link para baixar o instalador, com o passo a passo para ativar na primeira vez que abrir. Se não achar o e-mail, olhe a caixa de spam.</p></details>
       <details><summary>Preciso pagar alguma IA?</summary><p>Não. O Kobi já vem com IA gratuita, sem mensalidade. Ele pode usar uma IA que roda no seu PC. Se quiser, também pode conectar o Claude, o ChatGPT, o Gemini ou o Groq com a sua chave; nesse caso, o uso é cobrado pela empresa da IA (Gemini e Groq têm cota grátis).</p></details>
       <details><summary>Ele fica ouvindo tudo o que eu falo?</summary><p>O modo "sempre ouvindo" é opcional. Quando ligado, o reconhecimento acontece no seu computador e o Kobi só reage quando você diz "Ei, Kobi".</p></details>
       <details><summary>Funciona no meu PC?</summary><p>Funciona em Windows 10 e 11 de 64 bits. Para a IA local, o ideal é ter 8 GB de memória ou mais. Sem ela, o Kobi continua entendendo os comandos principais.</p></details>
@@ -721,4 +729,60 @@
     }
   });
   addEventListener('keydown', (e) => { if (e.key === 'Escape') modal.hidden = true; });
+
+  // Kobi que sai do logo quando você desce a página, segue o mouse e fala umas besteiras
+  (function buddy() {
+    const logo = document.getElementById('logoKobi');
+    const el = document.createElement('div'); el.id = 'buddy'; el.setAttribute('aria-hidden', 'true');
+    el.innerHTML = `<div class="bd-body"></div><div class="bd-bub"></div>`;
+    document.body.appendChild(el);
+    const body = el.querySelector('.bd-body'), bub = el.querySelector('.bd-bub');
+    let mood = '';
+    const setMood = (m) => { if (m !== mood) { mood = m; body.innerHTML = KOBI.svg({ size: 46, mood: m, uid: 'bd' + m }); } };
+    setMood('happy');
+    const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const cheap = Date.now() < new Date('2026-11-15T19:00:00-03:00').getTime();
+    const LINES = ['Compra… compra… 👀', 'Psiu! R$ 39,90 uma vez só', 'Sem mensalidade, hein!', 'Tô te seguindo, percebeu? 😄', 'Me leva pra casa 🥺', 'Prometo não pedir aumento', 'Eu toco suas músicas 🎵', 'O botão verde não morde…', 'Já me imaginou no seu PC?', 'Pode me chamar de Sexta-Feira 😎', 'Compra… compra… compra…', 'Eu lembro seus compromissos. Lembra de me comprar? 😏', 'Sou fofo E útil. Raro, né?']
+      .concat(cheap ? ['Até as 19h tá barato! ⏰'] : []);
+    let li = Math.floor(Math.random() * LINES.length), bubT = 0, forced = false;
+    const say = (t, ms) => { bub.textContent = t; el.classList.add('talk'); clearTimeout(bubT); bubT = setTimeout(() => { el.classList.remove('talk'); forced = false; }, ms || 3200); };
+    setInterval(() => { if (el.classList.contains('on') && !forced) { say(LINES[li++ % LINES.length]); } }, 5200);
+
+    let mx = innerWidth * 0.6, my = innerHeight * 0.5, x = 0, y = 0, out = false, tilt = 0, face = 1;
+    addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; }, { passive: true });
+    const home = () => { const r = logo.getBoundingClientRect(); return [r.left + r.width / 2 - 23, r.top + r.height / 2 - 23]; };
+    [x, y] = home();
+    const onScroll = () => {
+      const want = scrollY > 160;
+      if (want === out) return;
+      out = want; el.classList.toggle('on', out); logo.style.opacity = out ? '0' : '';
+      if (out) { setTimeout(() => say(LINES[li++ % LINES.length]), 700); } else el.classList.remove('talk');
+    };
+    addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+    document.querySelectorAll('[data-buy]').forEach((b) => {
+      b.addEventListener('mouseenter', () => { if (!out) return; forced = true; setMood('love'); say('ISSO! Clica aí! 🎉', 2200); });
+      b.addEventListener('mouseleave', () => setMood('happy'));
+    });
+
+    let t0 = performance.now();
+    (function frame(now) {
+      const dt = Math.min(50, now - t0); t0 = now;
+      let tx, ty;
+      if (!out) { [tx, ty] = home(); }
+      else if (fine && !calm) { tx = mx + 26; ty = my + 18; }
+      else { tx = 14; ty = innerHeight - 74; }
+      tx = Math.max(6, Math.min(innerWidth - 56, tx)); ty = Math.max(6, Math.min(innerHeight - 56, ty));
+      const k = calm ? 1 : 1 - Math.pow(0.88, dt / 16);
+      const dx = (tx - x) * k; x += dx; y += (ty - y) * k;
+      if (Math.abs(dx) > 0.6) face = dx > 0 ? 1 : -1;
+      tilt += (Math.max(-18, Math.min(18, dx * 2)) - tilt) * 0.2;
+      const bob = calm || !out ? 0 : Math.sin(now / 260) * 4;
+      el.style.transform = `translate(${x}px, ${y + bob}px)`;
+      body.style.transform = `scaleX(${face}) rotate(${tilt * face}deg)`;
+      el.classList.toggle('left', x > innerWidth - 230);
+      requestAnimationFrame(frame);
+    })(t0);
+  })();
 </script>
