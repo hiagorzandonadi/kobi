@@ -1,15 +1,19 @@
 {
-  "version": "3.4.2",
+  "version": "3.5.0",
   "date": "2026-11-15",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.4.2/Kobi-Setup.exe",
-  "macVersion": "3.3.0",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.0/Kobi-Setup.exe",
+  "macVersion": "3.5.0",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.0/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.0/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Nova aba Integrações: Webhooks (Zapier, Make, IFTTT, n8n), Todoist, Home Assistant (\"liga a luz da sala\") e Telegram (\"me manda no Telegram…\")",
-    "Google Agenda consertado: eventos que se repetem (reuniões semanais, mensais) agora aparecem. Aceita também agendas do Outlook e iCloud (.ics)",
-    "5 estilos de voz novos: Locutor, Robô clássico, Esquilo, Gigante e Radinho, e a voz Tuga (sotaque de Portugal)",
-    "Quando sair atualização, aparece no entalho: \"Atualização · clique aqui\""
+    "E-mail: \"resume meus e-mails\", \"tenho e-mail novo?\", \"lê o e-mail 2\" (Gmail, Yahoo, iCloud, Outlook · só leitura)",
+    "Agenda consertada: eventos que se repetem (reunião toda semana, academia todo dia) agora aparecem",
+    "\"O que eu tenho hoje/amanhã/essa semana?\" e \"marca dentista sexta às 15h\" no Google Agenda",
+    "Aceita agenda do Outlook e do iCloud também (link .ics)",
+    "Voz mais rápida: responde mais cedo quando você para de falar e usa o Whisper Turbo (com a Groq)",
+    "PC fraco? Se a IA do PC estiver demorando, ele passa sozinho para a IA grátis da nuvem, bem mais rápida",
+    "Dica na tela inicial para conectar a Groq grátis e o Kobi entender muito melhor sua voz",
+    "Mais seguro: depois de ler sites ou e-mails, ele não executa ações perigosas sem você pedir de novo"
   ]
 }
