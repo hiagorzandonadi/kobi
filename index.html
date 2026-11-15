@@ -270,7 +270,7 @@
 
 <div class="urg" id="urg"><div class="wrap">
   <span class="big">🔥 Último lote disponível</span>
-  <span class="vagas" id="vagasBox"><span class="vn">Restam <b id="vagasN">45</b> de <span id="vagasT">50</span> vagas</span><span class="vbar"><i id="vagasBar" style="width:90%"></i></span></span>
+  <span class="vagas" id="vagasBox" style="display:none"><span class="vn">Restam <b id="vagasN">45</b> de <span id="vagasT">50</span> vagas</span><span class="vbar"><i id="vagasBar" style="width:90%"></i></span></span>
   <span class="sub">Só <b>50 acessos</b> por <b>R$ 89,90</b>, vitalício e com <b>IA grátis</b>. Quando esgotar, o Kobi passa a ser por <b>mensalidade</b>.</span>
     <small>Quem compra agora paga uma vez só e fica com ele para sempre, com as atualizações incluídas.</small>
 </div></div>
@@ -815,7 +815,8 @@
   var U = 'https://kobi-licencas.hiagorzandonadi.workers.dev/vagas';
   function upd() {
     fetch(U, { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
-      if (!j || typeof j.restam !== 'number') return;
+      if (!j || typeof j.restam !== 'number' || !j.ativo) { document.getElementById('vagasBox').style.display = 'none'; return; }
+      document.getElementById('vagasBox').style.display = '';
       document.getElementById('vagasN').textContent = j.restam; document.getElementById('vagasT').textContent = j.total;
       document.getElementById('vagasBar').style.width = Math.max(4, Math.round((j.restam / j.total) * 100)) + '%';
     }).catch(function () {});
