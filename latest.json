@@ -2,9 +2,9 @@
   "version": "3.5.1",
   "date": "2026-11-15",
   "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.1/Kobi-Setup.exe",
-  "macVersion": "3.3.0",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Mac-x64.dmg",
+  "macVersion": "3.5.0",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.0/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.0/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
     "Atualizações agora têm aba própria no painel (com aviso NOVA) e aparecem no entalho: \"Atualização · clique aqui\"",
