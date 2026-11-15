@@ -236,7 +236,33 @@
     .modal .sheet { max-height: 90vh; overflow-y: auto; }
   }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+  .urg { background: linear-gradient(90deg, #3a2306, #2a1a08); border-bottom: 1px solid #FFB34055; color: var(--ink); font-size: 14.5px; }
+  .urg .wrap { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; justify-content: center; padding-block: 10px; text-align: center; }
+  .urg b { color: var(--warn); }
+  .urg .cd { font: 700 17px var(--font-mono); color: var(--warn); background: #00000055; border: 1px solid #FFB34066; border-radius: 10px; padding: 3px 10px; font-variant-numeric: tabular-nums; }
+  .urg small { display: block; width: 100%; color: var(--mist); font-size: 13px; }
 </style>
+
+<div class="urg" id="urg" hidden><div class="wrap">
+  <span>⚠️ <b>Urgente:</b> este preço vale só até <b>hoje às 19:00</b>. Depois ele sobe.</span>
+  <span class="cd" id="cd">--:--:--</span>
+  <small>Estamos com muitas vendas desde ontem, então algumas funções ainda não estão 100%. Já estamos arrumando, e as atualizações chegam de graça pra quem comprou.</small>
+</div></div>
+<script>
+(function () {
+  var END = new Date('2026-11-15T19:00:00-03:00').getTime(); // fim do preço atual (horário de Brasília)
+  var box = document.getElementById('urg'), cd = document.getElementById('cd');
+  function tick() {
+    var s = Math.floor((END - Date.now()) / 1000);
+    if (s <= 0) { box.hidden = true; return; }
+    box.hidden = false;
+    var p = function (n) { return String(n).padStart(2, '0'); };
+    cd.textContent = p(Math.floor(s / 3600)) + ':' + p(Math.floor(s / 60) % 60) + ':' + p(s % 60);
+    setTimeout(tick, 1000);
+  }
+  tick();
+})();
+</script>
 
 <header class="nav"><div class="wrap">
   <a class="brand" href="#topo"><span id="logoKobi"></span>Kobi</a>
@@ -392,7 +418,7 @@
   <div class="wrap final"><h2>Seu PC fica mais legal com o Kobi lá em cima.</h2><button class="btn btn-primary" data-buy>Comprar o Kobi · R$ 39,90</button></div>
 </main>
 
-<footer><div class="wrap"><span>Kobi · seu assistente no topo da tela · contato: <span id="contact"></span></span><span>Usa software livre: Vosk (Apache 2.0), Piper (MIT), Electron (MIT). Windows e Spotify são marcas de seus donos.</span></div></footer>
+<footer><div class="wrap"><span>Kobi · seu assistente no topo da tela · contato: direct no Instagram <a id="contact" href="https://instagram.com/kobi.ia" target="_blank" rel="noopener" style="color:inherit;font-weight:600">@kobi.ia</a></span><span>Usa software livre: Vosk (Apache 2.0), Piper (MIT), Electron (MIT). Windows e Spotify são marcas de seus donos.</span></div></footer>
 
 <div class="modal" id="modal" hidden><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mt">
   <button class="x" id="mx" aria-label="Fechar">✕</button>
@@ -514,13 +540,12 @@
   const PIX_NAME = 'Kobi';     // nome que aparece para quem paga
   const CARD_URL = '';         // link do checkout com cartão (Mercado Pago, Kiwify, Hotmart…)
   const CHECKOUT_URL = 'https://pay.cakto.com.br/kojjksr_1325563'; // checkout da Cakto (PIX e cartão; a Cakto manda o link de download por e-mail)
-  const CONTACT = 'seu-email@exemplo.com';
+  const CONTACT = 'direct no Instagram @kobi.ia';
   const DL_SETUP = 'https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Setup.exe';   // links dos instaladores (GitHub Releases)
   const DL_PORTABLE = 'https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Portable.exe';
   const DL_MAC_ARM = 'https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Mac-arm64.dmg';
   const DL_MAC_INTEL = 'https://github.com/hiagorzandonadi/kobi/releases/download/v3.3.0/Kobi-Mac-x64.dmg';
   /* ============================ */
-  document.getElementById('contact').textContent = CONTACT;
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const K = (size, mood, extra) => KOBI.svg(Object.assign({ size, mood: mood || 'idle', uid: 'l' + size + (mood || '') + (extra || '') }, extra && typeof extra === 'object' ? extra : {}));
   document.getElementById('logoKobi').innerHTML = K(34, 'idle', 'logo');
