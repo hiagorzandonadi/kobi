@@ -1,17 +1,95 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Baixar o Kobi</title>
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0b0d12;color:#eef1f6;font:16px/1.5 system-ui,Segoe UI,sans-serif;padding:16px;box-sizing:border-box}
-.c{max-width:520px;width:100%;background:#151922;border:1px solid #232a36;border-radius:20px;padding:28px}h1{margin:0 0 6px;font-size:26px}p{color:#9aa4b5;margin:0 0 18px}
-a.b{display:block;text-align:center;padding:14px 18px;border-radius:12px;text-decoration:none;font-weight:700;margin-top:10px;background:#232a36;color:#eef1f6}a.b.p{background:#3ddc97;color:#06130c}
-.f{font-size:13.5px;color:#9aa4b5;margin-top:18px}b{color:#eef1f6}.k{background:#0b0d12;border:1px solid #2a3242;border-radius:12px;padding:14px;margin-top:8px}</style></head><body><div class="c">
-<h1>Obrigado pela compra! 💚</h1><p>Seu Kobi é seu para sempre, com as atualizações incluídas. Baixe aqui:</p>
-<a class="b p" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Setup.exe">⬇ Instalador para Windows (recomendado)</a>
-<a class="b" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Portable.exe">Versão portátil (sem instalar)</a>
-<p style="margin:22px 0 0"><b>Usa Mac?</b> Baixe a versão do Mac:</p>
-<a class="b" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Mac-arm64.dmg"> Mac com chip Apple (M1, M2, M3, M4)</a>
-<a class="b" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Mac-x64.dmg"> Mac Intel</a>
-<div class="f" style="margin-top:8px">No Mac: abra o .dmg, arraste o Kobi para Aplicativos e, na primeira vez, clique com o <b>botão direito → Abrir</b>. Se o Mac bloquear, vá em <b>Ajustes do Sistema → Privacidade e Segurança → Abrir Mesmo Assim</b>.</div>
-<h2 style="font-size:17px;margin:24px 0 6px">🔑 Como ativar</h2>
-<div class="k">Na primeira vez que abrir, o Kobi pede o <b>e-mail que você usou na compra</b>. É só digitar e clicar em <b>Ativar</b>.<br><br><span style="color:#9aa4b5;font-size:14px">Cada compra ativa até 2 computadores (ex.: o PC e o Mac). Trocou de computador? Fale com a gente no Instagram <b>@kobi.ia</b>.</span></div>
-<div class="f"><b>Windows 10 e 11, 64 bits.</b> Se aparecer "O Windows protegeu o computador", clique em <b>Mais informações → Executar assim mesmo</b>. Isso acontece com apps novos.<br><br>Guarde este e-mail: o link continua valendo. O próprio Kobi avisa quando sai versão nova.<br><br><a href="https://hiagorzandonadi.github.io/kobi/seguranca.html" style="color:#3ddc97">Segurança e privacidade do Kobi</a></div>
-</div></body></html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Seu Kobi chegou! 💚</title>
+<style>
+:root{--bg:#07080c;--card:rgba(22,26,36,.72);--line:rgba(255,255,255,.08);--tx:#f2f5fa;--mut:#9aa4b5;--acc:#9BF35A;--acc2:#5AD8FF}
+*{box-sizing:border-box}html,body{margin:0}
+body{min-height:100vh;background:radial-gradient(900px 500px at 15% -10%,rgba(155,243,90,.16),transparent 60%),radial-gradient(800px 500px at 110% 10%,rgba(90,216,255,.14),transparent 60%),var(--bg);color:var(--tx);font:16px/1.55 "Segoe UI",system-ui,-apple-system,sans-serif;padding:28px 16px 60px}
+.w{max-width:620px;margin:0 auto}
+.hero{text-align:center;padding:10px 0 18px}
+.mascot{display:inline-block;filter:drop-shadow(0 12px 30px rgba(155,243,90,.35));animation:fl 4s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+h1{font-size:clamp(28px,7vw,40px);line-height:1.1;margin:14px 0 8px;letter-spacing:-.02em}
+h1 span{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);font-size:17px;margin:0 auto;max-width:460px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;margin-top:16px;backdrop-filter:blur(14px);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.step{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.n{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;font-weight:800;color:#07080c;background:linear-gradient(135deg,var(--acc),var(--acc2));flex:none}
+.step b{font-size:18px}
+a.b{display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;padding:15px 18px;border-radius:14px;text-decoration:none;font-weight:700;margin-top:10px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--tx);transition:transform .15s,background .15s}
+a.b:hover{transform:translateY(-1px);background:rgba(255,255,255,.1)}
+a.b.p{background:linear-gradient(135deg,var(--acc),#6fe0a0);color:#07120a;border:0;box-shadow:0 10px 30px rgba(155,243,90,.3)}
+.os{font-size:13px;color:var(--mut);margin-top:12px}.os b{color:var(--tx)}
+.mail{display:flex;gap:12px;align-items:center;background:rgba(155,243,90,.08);border:1px solid rgba(155,243,90,.25);border-radius:16px;padding:14px 16px;margin-top:6px}
+.mail .ic{font-size:26px}.mail b{color:var(--acc)}
+.tip{font-size:14px;color:var(--mut);margin-top:10px}
+details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}summary{cursor:pointer;color:var(--tx);font-weight:600;font-size:14.5px}
+details p{font-size:14px;color:var(--mut);margin:8px 0 0}
+.foot{text-align:center;color:var(--mut);font-size:13.5px;margin-top:22px}.foot a{color:var(--acc)}
+</style></head><body><div class="w">
+<div class="hero">
+  <div class="mascot"><style>
+  .kobi { overflow: visible; display: block; }
+  .kobi .kb-eyes { transition: transform .12s ease-out; }
+  .kobi .kb-blink { animation: kbBlink 5s infinite; transform-origin: center; transform-box: fill-box; }
+  @keyframes kbBlink { 0%, 93%, 100% { transform: scaleY(1); } 95% { transform: scaleY(.08); } }
+  .kobi .kb-pulse { animation: kbPulse 1s infinite; }
+  @keyframes kbPulse { 50% { opacity: .3; } }
+  .kobi .kb-wave { animation: kbWave 1s infinite; } .kobi .kb-w2 { animation-delay: .25s; }
+  @keyframes kbWave { 0%, 100% { opacity: .2; } 50% { opacity: 1; } }
+  .kobi.kb-talk .kb-mouth { animation: kbTalk .28s infinite alternate; transform-origin: center; transform-box: fill-box; }
+  @keyframes kbTalk { to { transform: scaleY(2.6); } }
+  .kobi.kb-laugh .kb-bodyg, .kobi.kb-happy .kb-bodyg { animation: kbBounce .5s ease-in-out 3; transform-origin: 50% 100%; transform-box: fill-box; }
+  @keyframes kbBounce { 50% { transform: translateY(-1.6px); } }
+  .kobi.kb-angry .kb-bodyg { animation: kbShake .12s 6; } @keyframes kbShake { 50% { transform: translateX(.8px); } }
+  .kobi.kb-surprised .kb-bodyg { animation: kbPop .3s ease; transform-origin: 50% 100%; transform-box: fill-box; } @keyframes kbPop { 50% { transform: scale(1.08); } }
+  .kobi .kb-zz { animation: kbZz 2s infinite; } @keyframes kbZz { 0% { opacity: 0; transform: translate(0,0); } 50% { opacity: 1; } 100% { opacity: 0; transform: translate(3px,-5px); } }
+  .kb-noanim .kobi * { animation: none !important; }</style><svg class="kobi kb-love" width="110" height="88" viewBox="-2 -8 44 40" overflow="visible">
+      <defs><linearGradient id="kbpg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F7FF"/><stop offset="1" stop-color="#BFCDF5"/></linearGradient></defs>
+      <line x1="27" y1="7" x2="31" y2="1.8" stroke="#BFCDF5" stroke-width="2" stroke-linecap="round"/><circle class="kb-ant" cx="31.5" cy="1.8" r="2.4" fill="#9BF35A"/>
+      <g class="kb-bodyg"><rect x="3" y="6" width="34" height="25" rx="11" fill="url(#kbpg)"/>
+      <rect x="7" y="11" width="26" height="14" rx="7" fill="#1B1E2B"/>
+      <g class="kb-eyes" data-eyes><g class="kb-eyein"><path d="M15 21 l-3.2 -3.2 a1.9 1.9 0 0 1 3.2 -2.4 a1.9 1.9 0 0 1 3.2 2.4z" fill="#FF5A8A"/><path d="M25 21 l-3.2 -3.2 a1.9 1.9 0 0 1 3.2 -2.4 a1.9 1.9 0 0 1 3.2 2.4z" fill="#FF5A8A"/></g></g>
+      
+      <ellipse cx="9.5" cy="23" rx="2" ry="1.1" fill="#FF8FB1" opacity=".55"/><ellipse cx="30.5" cy="23" rx="2" ry="1.1" fill="#FF8FB1" opacity=".55"/>
+      </g>
+    </svg></div>
+  <h1>Seu <span>Kobi</span> chegou! 💚</h1>
+  <p class="sub">Obrigado pela compra. Ele é seu para sempre, com todas as atualizações incluídas.</p>
+</div>
+
+<div class="card">
+  <div class="step"><span class="n">1</span><b>Baixe o Kobi</b></div>
+  <div id="dl">
+    <a class="b p" id="win" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Setup.exe">⬇ Baixar para Windows</a>
+    <a class="b" id="macA" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Mac-arm64.dmg"> Mac com chip Apple (M1, M2, M3, M4)</a>
+    <a class="b" id="macI" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Mac-x64.dmg"> Mac Intel</a>
+    <a class="b" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Portable.exe" style="font-weight:600;font-size:14.5px">Windows sem instalar (versão portátil)</a>
+  </div>
+  <details><summary>Apareceu um aviso ao abrir?</summary>
+    <p><b>Windows:</b> se aparecer “O Windows protegeu o computador”, clique em <b>Mais informações → Executar assim mesmo</b>. Isso acontece com apps novos.</p>
+    <p><b>Mac:</b> abra o .dmg, arraste o Kobi para Aplicativos e, na primeira vez, clique com o <b>botão direito → Abrir</b>. Se bloquear: <b>Ajustes do Sistema → Privacidade e Segurança → Abrir Mesmo Assim</b>.</p>
+  </details>
+</div>
+
+<div class="card">
+  <div class="step"><span class="n">2</span><b>Ative com o seu e-mail</b></div>
+  <div class="mail"><span class="ic">🔑</span><div>Na primeira vez que abrir, digite o <b>e-mail que você usou na compra</b> e clique em <b>Ativar</b>. Pronto!</div></div>
+  <p class="tip">Não precisa de chave: o seu e-mail é a sua licença. Cada compra ativa até <b style="color:var(--tx)">2 computadores</b> (ex.: o PC e o Mac).</p>
+  <details><summary>Não ativou?</summary>
+    <p>Confira se é o mesmo e-mail da compra na Cakto. Se acabou de pagar, espere 1 minuto e tente de novo. Trocou de computador ou ainda deu erro? Chame a gente no Instagram <b>@kobi.ia</b> ou na aba <b>Suporte</b> do Kobi.</p>
+  </details>
+</div>
+
+<div class="card">
+  <div class="step"><span class="n">3</span><b>Diga “Ei, Kobi” 🎙️</b></div>
+  <p class="tip" style="margin-top:0">O Kobi fica no topo da tela. Na aba <b style="color:var(--tx)">Avisos</b> você recebe as novidades, e o próprio Kobi avisa quando sai versão nova.</p>
+</div>
+
+<p class="foot">Guarde este e-mail: o link continua valendo. · <a href="https://hiagorzandonadi.github.io/kobi/seguranca.html">Segurança e privacidade</a></p>
+</div>
+<script>
+(function(){var ua=navigator.userAgent||'',mac=/Mac/.test(navigator.platform||'')||/Mac OS X/.test(ua);
+if(mac){var w=document.getElementById('win'),a=document.getElementById('macA'),d=document.getElementById('dl');w.classList.remove('p');a.classList.add('p');d.insertBefore(a,d.firstChild);d.insertBefore(document.getElementById('macI'),a.nextSibling);}})();
+</script>
+</body></html>
