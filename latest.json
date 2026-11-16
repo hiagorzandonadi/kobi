@@ -1,12 +1,15 @@
 {
-  "version": "3.5.6",
+  "version": "3.5.7",
   "date": "2026-11-16",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.6/Kobi-Setup.exe",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.7/Kobi-Setup.exe",
   "macVersion": "3.5.6",
   "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.6/Kobi-Mac-arm64.dmg",
   "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.6/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Ativar ficou mais fácil: use a chave da página de download ou o e-mail da compra (pode preencher os dois)"
+    "Painel de configurações com visual novo: menu fino com ícones à esquerda, e o Início mostra o que falta configurar com o botão de ligar ali mesmo",
+    "Busca de configurações (Ctrl+K): digite \"microfone\", \"atalho\" ou \"spotify\" e o Kobi abre direto na opção",
+    "Avisos e Suporte também aparecem no Início: você vê o recado mais novo e fala com a equipe sem trocar de tela",
+    "Rotinas, Integrações, Tarefas, Widgets e Spotify agora ficam em Funções; Entalho, Atalhos, Proteção com rosto e Atualizações ficam em Ajustes"
   ]
 }
