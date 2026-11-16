@@ -272,8 +272,8 @@
   .upd { position: relative; overflow: hidden; color: var(--ink); border-bottom: 1px solid var(--line);
     background: radial-gradient(900px 260px at 15% -40%, #9BF35A2e, transparent 70%), radial-gradient(800px 260px at 90% 130%, #5AD8FF26, transparent 70%), linear-gradient(180deg, #13162a, #0f1122); }
   .upd .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; align-items: center; padding-block: 22px; }
-  .upd .pill { display: inline-flex; align-items: center; gap: 8px; font: 700 12.5px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--glow); background: #9BF35A14; border: 1px solid #9BF35A55; border-radius: 99px; padding: 5px 12px; }
-  .upd .pill i { width: 8px; height: 8px; border-radius: 50%; background: var(--glow); box-shadow: 0 0 0 0 #9BF35A99; animation: updPulse 1.8s infinite; }
+  .upd .upill { display: inline-flex; align-items: center; gap: 8px; font: 700 12.5px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--glow); background: #9BF35A14; border: 1px solid #9BF35A55; border-radius: 99px; padding: 5px 12px; }
+  .upd .upill i { width: 8px; height: 8px; border-radius: 50%; background: var(--glow); box-shadow: 0 0 0 0 #9BF35A99; animation: updPulse 1.8s infinite; }
   @keyframes updPulse { 0% { box-shadow: 0 0 0 0 #9BF35A99 } 70% { box-shadow: 0 0 0 9px #9BF35A00 } 100% { box-shadow: 0 0 0 0 #9BF35A00 } }
   .upd h2 { margin: 10px 0 6px; font: 800 clamp(24px, 3.6vw, 34px)/1.1 var(--font-display); letter-spacing: -.01em; }
   .upd h2 em { font-style: normal; background: linear-gradient(90deg, var(--glow), var(--sky)); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -282,7 +282,7 @@
   .upd li { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; }
   .upd li span { flex: none; width: 22px; height: 22px; display: grid; place-items: center; border-radius: 7px; background: #5AD8FF1f; border: 1px solid #5AD8FF44; font-size: 12px; }
   .cupom { position: relative; text-align: center; border-radius: 20px; padding: 18px 18px 16px; background: linear-gradient(160deg, #1b2b18, #141a2c); border: 1px solid #9BF35A55; box-shadow: 0 18px 50px -20px #9BF35A55, inset 0 1px 0 #ffffff12; }
-  .cupom::before, .cupom::after { content: ""; position: absolute; top: 50%; width: 18px; height: 18px; margin-top: -9px; border-radius: 50%; background: #10132a; border: 1px solid #9BF35A55; }
+  .cupom::before, .cupom::after { content: ""; position: absolute; top: 50%; width: 18px; height: 18px; margin-top: -9px; border-radius: 50%; background: #11132a; border: 1px solid #9BF35A55; clip-path: inset(-2px -2px -2px -2px); }
   .cupom::before { left: -10px; } .cupom::after { right: -10px; }
   .cupom .ct { display: block; font: 700 13px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--mist); }
   .cupom .off { display: block; margin: 2px 0 4px; font: 800 clamp(34px, 5vw, 46px)/1 var(--font-display); color: var(--glow); text-shadow: 0 0 30px #9BF35A55; }
@@ -299,11 +299,11 @@
   .tk-cupom { margin: 10px 0 4px; padding: 10px 12px; border-radius: 12px; background: #9BF35A14; border: 1px dashed #9BF35A88; font-size: 14.5px; color: var(--ink); }
   .tk-cupom b { color: var(--glow); }
   @media (max-width: 760px) { .upd .wrap { grid-template-columns: 1fr; gap: 16px; padding-block: 18px; } .upd h2 { margin-top: 8px; } }
-  @media (prefers-reduced-motion: reduce) { .upd .pill i { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .upd .upill i { animation: none; } }
 </style>
 <section class="upd" id="urg"><div class="wrap">
   <div>
-    <span class="pill"><i></i>Saiu hoje às 15:00 · versão 3.5.9</span>
+    <span class="upill"><i></i>Saiu hoje às 15:00 · versão 3.5.9</span>
     <h2>O Kobi acabou de ganhar uma <em>atualização nova</em></h2>
     <p class="lead">Para Windows e Mac. Quem já tem o Kobi recebe de graça, com aviso dentro do app.</p>
     <ul>
