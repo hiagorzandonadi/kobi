@@ -268,6 +268,53 @@
   #buddy.chill .bd-body svg { transform: rotate(-24deg); transition: transform .4s .35s; }
 </style>
 
+<style>
+  .cupom { background: linear-gradient(90deg, #1b3a0c, #0f2a1c 55%, #10263a); border-bottom: 1px solid #9BF35A66; color: var(--ink); }
+  .cupom .wrap { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: center; padding-block: 14px; text-align: center; }
+  .cupom .ct { display: block; width: 100%; font: 800 clamp(20px, 3.6vw, 30px)/1.15 var(--font-display); color: var(--glow); text-shadow: 0 0 24px #9BF35A44; }
+  .cupom .cs { display: block; width: 100%; font-size: clamp(14.5px, 2vw, 17px); }
+  .cupom .cs s { color: var(--mist); }
+  .cupom .code { font: 800 20px var(--font-mono); letter-spacing: .08em; color: var(--night); background: var(--glow); border: 0; border-radius: 10px; padding: 6px 14px; cursor: pointer; }
+  .cupom .code:hover { filter: brightness(1.08); }
+  .cupom .ccd { font: 700 17px var(--font-mono); color: var(--glow); background: #00000055; border: 1px solid #9BF35A66; border-radius: 10px; padding: 5px 10px; font-variant-numeric: tabular-nums; }
+  .cupom small { display: block; width: 100%; color: var(--mist); font-size: 13.5px; }
+  .cupom.fim .ct { color: var(--mist); text-shadow: none; }
+  .tk-cupom { margin: 10px 0 4px; padding: 10px 12px; border-radius: 12px; background: #9BF35A14; border: 1px dashed #9BF35A88; font-size: 14.5px; color: var(--ink); }
+  .tk-cupom b { color: var(--glow); }
+</style>
+<div class="cupom" id="cupom"><div class="wrap">
+  <span class="ct">🎉 Oferta da atualização das 15:00 do Kobi</span>
+  <span class="cs">Use o cupom e leve <b>17% de desconto</b>: de <s>R$ 89,90</s> por <b>R$ 74,62</b>. Válido só até as <b>18:00 de hoje (16/11)</b>.</span>
+  <button class="code" id="cupomCode" type="button" title="Copiar cupom">KOBI50</button>
+  <span class="ccd" id="cupomCd" aria-live="polite">--:--:--</span>
+  <small>Clique no cupom para copiar e cole no campo de cupom na tela de pagamento.</small>
+</div></div>
+<script>
+(function () {
+  var END = Date.parse('2026-11-16T18:00:00-03:00'); // 18:00 de Brasília
+  var box = document.getElementById('cupom'), cd = document.getElementById('cupomCd'), tk = document.getElementById('tkCupom'), btn = document.getElementById('cupomCode');
+  function p(n) { return (n < 10 ? '0' : '') + n; }
+  function tick() {
+    var left = END - Date.now();
+    if (left <= 0) {
+      box.classList.add('fim');
+      box.querySelector('.wrap').innerHTML = '<span class="ct">Oferta da atualização das 15:00 encerrada</span><small>O cupom era válido até as 18:00 de 16/11. Obrigado a quem aproveitou!</small>';
+      if (tk) tk.remove();
+      if (Date.now() - END > 6 * 3600e3) box.remove();
+      return;
+    }
+    var s = Math.floor(left / 1000);
+    cd.textContent = 'termina em ' + p(Math.floor(s / 3600)) + ':' + p(Math.floor(s % 3600 / 60)) + ':' + p(s % 60);
+    setTimeout(tick, 1000);
+  }
+  btn.addEventListener('click', function () {
+    try { navigator.clipboard.writeText('KOBI50'); } catch (e) {}
+    btn.textContent = 'Copiado ✓'; setTimeout(function () { btn.textContent = 'KOBI50'; }, 1600);
+  });
+  tick();
+})();
+</script>
+
 <div class="urg" id="urg"><div class="wrap">
   <span class="big">🔥 Último lote disponível</span>
   <span class="vagas" id="vagasBox" style="display:none"><span class="vn">Restam <b id="vagasN">45</b> de <span id="vagasT">50</span> vagas</span><span class="vbar"><i id="vagasBar" style="width:90%"></i></span></span>
@@ -402,6 +449,7 @@
       <div class="amount"><b>R$ 89,90</b></div>
       <div class="once">Pagamento único. Pagou, é seu para sempre.</div>
       <ul><li>Todas as funções, sem planos nem limites</li><li>Voz offline com "Ei, Kobi" e voz fofinha de robô</li><li>IA gratuita incluída, sem mensalidade nem assinatura</li><li>Atualizações incluídas, com aviso quando sair versão nova</li><li>Instalador para Windows 10 e 11</li></ul>
+      <div class="tk-cupom" id="tkCupom">🎉 Até as 18:00 de hoje: cupom <b>KOBI50</b> = <b>17% off</b> (R$ 74,62). Digite o cupom na tela de pagamento.</div>
       <button class="btn btn-primary" data-buy>Comprar por R$ 89,90</button>
       <div class="fine">PIX ou cartão · o link de download chega no seu e-mail</div>
     </div>
