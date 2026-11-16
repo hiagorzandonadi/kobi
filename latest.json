@@ -1,12 +1,15 @@
 {
-    "version":  "3.5.3",
+    "version":  "3.5.4",
     "date":  "2026-11-15",
-    "url":  "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.3/Kobi-Setup.exe",
-    "macVersion":  "3.5.3",
-    "urlMacArm64":  "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.3/Kobi-Mac-arm64.dmg",
-    "urlMacX64":  "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.3/Kobi-Mac-x64.dmg",
+    "url":  "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.4/Kobi-Setup.exe",
+    "macVersion":  "3.5.4",
+    "urlMacArm64":  "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.4/Kobi-Mac-arm64.dmg",
+    "urlMacX64":  "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.4/Kobi-Mac-x64.dmg",
     "page":  "https://hiagorzandonadi.github.io/kobi/",
     "notes":  [
-                  "Corrigido o erro \"NÃ£o consegui falar com a IA: 404\" (Gemini e outras): quando o modelo escolhido nÃ£o existe mais, o Kobi escolhe sozinho um que funciona"
+                  "Nova aba Avisos: recados e novidades da equipe do Kobi direto no app",
+                  "Nova aba Suporte: fale com a equipe e receba a resposta aqui mesmo",
+                  "AtivaÃ§Ã£o pelo e-mail da compra, com licenÃ§a pessoal que vale em atÃ© 2 computadores",
+                  "SeguranÃ§a: a chave de ativaÃ§Ã£o antiga (compartilhada) foi desativada; quem comprou ativa com o e-mail"
               ]
 }
