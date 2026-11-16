@@ -2,9 +2,9 @@
   "version": "3.5.5",
   "date": "2026-11-15",
   "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.5/Kobi-Setup.exe",
-  "macVersion": "3.5.4",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.4/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.4/Kobi-Mac-x64.dmg",
+  "macVersion": "3.5.5",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.5/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.5/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
     "Escuta refeita do zero: o Kobi entende a frase inteira do jeito que você fala, não corta mais no meio e não deixa o nome grudado no pedido",
