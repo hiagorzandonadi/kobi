@@ -1,12 +1,12 @@
 {
-  "version": "4.9.1",
+  "version": "4.9.2",
   "date": "2026-11-16",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.1/Kobi-Setup.exe",
-  "macVersion": "4.9.1",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.1/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.1/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.2/Kobi-Setup.exe",
+  "macVersion": "4.9.2",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.2/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.2/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Correção no microfone: o Kobi volta a usar a taxa do seu microfone (Bluetooth e USB) e, se a captura nova ficar muda, troca sozinho para a antiga"
+    "Correção no áudio: se o som do PC demorar para iniciar, o microfone e a voz do Kobi não travam mais (ele usa o jeito antigo de captura)"
   ]
 }
