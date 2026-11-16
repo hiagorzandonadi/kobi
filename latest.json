@@ -1,12 +1,12 @@
 {
-  "version": "4.9.7",
+  "version": "4.9.8",
   "date": "2026-11-16",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.7/Kobi-Setup.exe",
-  "macVersion": "4.9.7",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.7/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.7/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.8/Kobi-Setup.exe",
+  "macVersion": "4.9.8",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.8/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.8/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "O cartão do timer aparece grande só na hora de criar e logo volta ao tamanho pequeno"
+    "Responder o WhatsApp pelo entalho: clique na notificação, escreva e aperte Enter (na primeira vez o Kobi pede o número da pessoa e guarda)"
   ]
 }
