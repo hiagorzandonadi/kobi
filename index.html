@@ -301,7 +301,7 @@
   @media (max-width: 760px) { .upd .wrap { grid-template-columns: 1fr; gap: 16px; padding-block: 18px; } .upd h2 { margin-top: 8px; } }
   @media (prefers-reduced-motion: reduce) { .upd .upill i { animation: none; } }
 </style>
-<section class="upd" id="urg"><div class="wrap">
+<section class="upd" id="urg" style="display:none!important"><div class="wrap">
   <div>
     <span class="upill"><i></i>Saiu hoje às 15:00 · versão 3.5.9</span>
     <h2>O Kobi acabou de ganhar uma <em>atualização nova</em></h2>
@@ -357,7 +357,7 @@
 
 <main id="topo">
   <div class="wrap hero" id="demo">
-    <div class="eyebrow">para Windows e Mac · versão 3.5.9</div>
+    <div class="eyebrow">para Windows e Mac</div>
     <h1>Um amigo que mora no <em>topo da sua tela</em>.</h1>
     <p class="lead">O Kobi vive no entalho do seu PC. Diga "Ei, Kobi" e ele toca suas músicas, marca seus lembretes, cuida das tarefas e conversa com você. Já vem com IA gratuita e voz na nuvem incluída, por uma assinatura simples. E nunca mais paga nada, nem mensalidade, nem assinatura.</p>
     <div class="ctas"><button class="btn btn-primary" data-buy>Assinar o Kobi · R$ 68,90/mês</button><a class="btn btn-ghost" href="#funcoes">Ver o que ele faz</a></div>
@@ -629,8 +629,8 @@
   const CONTACT = 'direct no Instagram @kobi.ia';
   const DL_SETUP = 'https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Setup.exe';   // links dos instaladores (GitHub Releases)
   const DL_PORTABLE = 'https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Portable.exe';
-  const DL_MAC_ARM = 'https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.7/Kobi-Mac-arm64.dmg';
-  const DL_MAC_INTEL = 'https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.7/Kobi-Mac-x64.dmg';
+  const DL_MAC_ARM = 'https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Mac-arm64.dmg';
+  const DL_MAC_INTEL = 'https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Mac-x64.dmg';
   /* ============================ */
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const K = (size, mood, extra) => KOBI.svg(Object.assign({ size, mood: mood || 'idle', uid: 'l' + size + (mood || '') + (extra || '') }, extra && typeof extra === 'object' ? extra : {}));
@@ -829,7 +829,7 @@
     const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const cheap = Date.now() < new Date('2026-11-15T19:00:00-03:00').getTime();
     const LINES = ['Compra… compra… 👀', 'Psiu! R$ 68,90 por mês', 'Cancela quando quiser!', 'Tô te seguindo, percebeu? 😄', 'Me leva pra casa 🥺', 'Prometo não pedir aumento', 'Eu toco suas músicas 🎵', 'O botão verde não morde…', 'Já me imaginou no seu PC?', 'Pode me chamar de Sexta-Feira 😎', 'Compra… compra… compra…', 'Eu lembro seus compromissos. Lembra de me comprar? 😏', 'Sou fofo E útil. Raro, né?']
-      .concat(['Atualização nova saiu hoje! 🎉', 'Cupom KOBI50: 17% off até as 18h 🤫']);
+      .concat(['Voz na nuvem incluída! 🎙️', 'Cancela quando quiser 💚']);
     let li = Math.floor(Math.random() * LINES.length), bubT = 0, forced = false;
     const say = (t, ms) => { bub.textContent = t; el.classList.add('talk'); clearTimeout(bubT); bubT = setTimeout(() => { el.classList.remove('talk'); forced = false; }, ms || 3200); };
     setInterval(() => { if (el.classList.contains('on') && !forced) { say(LINES[li++ % LINES.length]); } }, 5200);
