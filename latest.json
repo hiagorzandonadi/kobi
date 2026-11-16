@@ -1,12 +1,18 @@
 {
-  "version": "3.5.10",
+  "version": "4.9.0",
   "date": "2026-11-16",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.10/Kobi-Setup.exe",
-  "macVersion": "3.5.10",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.10/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.10/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.0/Kobi-Setup.exe",
+  "macVersion": "4.9.0",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.0/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.0/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Novo: botão do Grupo do WhatsApp no Início. Ele confere se a sua compra inclui o grupo e, se não incluir, mostra como comprar o acesso"
+    "Voz na nuvem do Kobi: entende o que você fala como o ChatGPT, já inclusa e sem configurar nada",
+    "Escuta refeita: acorda melhor no \"Ei, Kobi\", não perde o som quando o PC engasga e gasta muito menos processador",
+    "Minha conta: clique no seu perfil para ver a data da compra e colocar uma foto",
+    "Spotify: troca de música certinho mesmo com o Spotify já tocando",
+    "Quando uma IA grátis está lotada, o Kobi troca sozinho para outra",
+    "O atalho Ctrl+Alt+W (que atrapalhava o \"?\" no teclado brasileiro) vem desligado",
+    "Entalho mais leve: o aviso de atualização para de piscar e o mascote gasta menos"
   ]
 }
