@@ -19,7 +19,13 @@ h1 span{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-backgro
 a.b{display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;padding:15px 18px;border-radius:14px;text-decoration:none;font-weight:700;margin-top:10px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--tx);transition:transform .15s,background .15s}
 a.b:hover{transform:translateY(-1px);background:rgba(255,255,255,.1)}
 a.b.p{background:linear-gradient(135deg,var(--acc),#6fe0a0);color:#07120a;border:0;box-shadow:0 10px 30px rgba(155,243,90,.3)}
-.os{font-size:13px;color:var(--mut);margin-top:12px}.os b{color:var(--tx)}
+.os2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.osb{font:inherit;color:var(--tx);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;padding:22px 10px 18px;border-radius:18px;background:rgba(255,255,255,.04);border:1.5px solid var(--line);transition:transform .15s,border-color .15s,background .15s}
+.osb:hover{transform:translateY(-2px);background:rgba(255,255,255,.07)}
+.osb b{font-size:19px}.osb span{font-size:13px;color:var(--mut)}
+.osb.on{border-color:var(--acc);background:rgba(155,243,90,.08);box-shadow:0 0 0 4px rgba(155,243,90,.12),0 12px 30px rgba(155,243,90,.15)}
+.ver{display:none;margin-top:14px;animation:in .25s ease}.ver.on{display:block}@keyframes in{from{opacity:0;transform:translateY(6px)}}
+a.b{flex-direction:column;gap:2px}a.b small{font-weight:500;font-size:12.5px;opacity:.75}
 .mail{display:flex;gap:12px;align-items:center;background:rgba(155,243,90,.08);border:1px solid rgba(155,243,90,.25);border-radius:16px;padding:14px 16px;margin-top:6px}
 .mail .ic{font-size:26px}.mail b{color:var(--acc)}
 .tip{font-size:14px;color:var(--mut);margin-top:10px}
@@ -59,17 +65,21 @@ details p{font-size:14px;color:var(--mut);margin:8px 0 0}
 </div>
 
 <div class="card">
-  <div class="step"><span class="n">1</span><b>Baixe o Kobi</b></div>
-  <div id="dl">
-    <a class="b p" id="win" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Setup.exe">⬇ Baixar para Windows</a>
-    <a class="b" id="macA" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Mac-arm64.dmg"> Mac com chip Apple (M1, M2, M3, M4)</a>
-    <a class="b" id="macI" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Mac-x64.dmg"> Mac Intel</a>
-    <a class="b" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Portable.exe" style="font-weight:600;font-size:14.5px">Windows sem instalar (versão portátil)</a>
+  <div class="step"><span class="n">1</span><b>Qual é o seu computador?</b></div>
+  <div class="os2">
+    <button class="osb" data-os="win"><svg viewBox="0 0 24 24" width="46" height="46"><path fill="#5AD8FF" d="M2 4.6 10 3.5v7.8H2zM11 3.4 22 2v9.3H11zM2 12.6h8v7.9l-8-1.1zM11 12.6h11V22l-11-1.5z"/></svg><b>Windows</b><span>10 e 11</span></button>
+    <button class="osb" data-os="mac"><svg viewBox="0 0 24 24" width="46" height="46"><path fill="#f2f5fa" d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.9-1.1-2.9-4.1zM13.9 5.2c.7-.9 1.2-2 1.1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.1.1 2.3-.6 3-1.5z"/></svg><b>Mac</b><span>Apple</span></button>
   </div>
-  <details><summary>Apareceu um aviso ao abrir?</summary>
-    <p><b>Windows:</b> se aparecer “O Windows protegeu o computador”, clique em <b>Mais informações → Executar assim mesmo</b>. Isso acontece com apps novos.</p>
-    <p><b>Mac:</b> abra o .dmg, arraste o Kobi para Aplicativos e, na primeira vez, clique com o <b>botão direito → Abrir</b>. Se bloquear: <b>Ajustes do Sistema → Privacidade e Segurança → Abrir Mesmo Assim</b>.</p>
-  </details>
+  <div class="ver" id="v-win">
+    <a class="b p" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Setup.exe"><span>⬇ Baixar o instalador</span><small>Recomendado</small></a>
+    <a class="b" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Portable.exe"><span>Versão portátil</span><small>Sem instalar, roda direto</small></a>
+    <p class="tip">Se aparecer “O Windows protegeu o computador”, clique em <b style="color:var(--tx)">Mais informações → Executar assim mesmo</b>. Isso acontece com apps novos.</p>
+  </div>
+  <div class="ver" id="v-mac">
+    <a class="b p" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Mac-arm64.dmg"><span>⬇ Mac com chip Apple</span><small>M1, M2, M3, M4 (a partir de 2020)</small></a>
+    <a class="b" href="https://github.com/hiagorzandonadi/kobi/releases/latest/download/Kobi-Mac-x64.dmg"><span>Mac Intel</span><small>Modelos mais antigos</small></a>
+    <p class="tip">Não sabe qual é? Menu  → <b style="color:var(--tx)">Sobre este Mac</b>: se aparecer “Chip Apple M…”, é o primeiro.<br>Abra o .dmg, arraste o Kobi para <b style="color:var(--tx)">Aplicativos</b> e, na primeira vez, clique com o <b style="color:var(--tx)">botão direito → Abrir</b>. Se bloquear: Ajustes do Sistema → Privacidade e Segurança → Abrir Mesmo Assim.</p>
+  </div>
 </div>
 
 <div class="card">
@@ -89,7 +99,12 @@ details p{font-size:14px;color:var(--mut);margin:8px 0 0}
 <p class="foot">Guarde este e-mail: o link continua valendo. · <a href="https://hiagorzandonadi.github.io/kobi/seguranca.html">Segurança e privacidade</a></p>
 </div>
 <script>
-(function(){var ua=navigator.userAgent||'',mac=/Mac/.test(navigator.platform||'')||/Mac OS X/.test(ua);
-if(mac){var w=document.getElementById('win'),a=document.getElementById('macA'),d=document.getElementById('dl');w.classList.remove('p');a.classList.add('p');d.insertBefore(a,d.firstChild);d.insertBefore(document.getElementById('macI'),a.nextSibling);}})();
+(function(){
+  function pick(os){[].forEach.call(document.querySelectorAll('.osb'),function(b){b.classList.toggle('on',b.getAttribute('data-os')===os)});
+    document.getElementById('v-win').classList.toggle('on',os==='win');document.getElementById('v-mac').classList.toggle('on',os==='mac');}
+  [].forEach.call(document.querySelectorAll('.osb'),function(b){b.onclick=function(){pick(b.getAttribute('data-os'))}});
+  var ua=navigator.userAgent||'';
+  if(/Mac/.test(navigator.platform||'')||/Mac OS X/.test(ua))pick('mac');else if(/Windows/.test(ua))pick('win');
+})();
 </script>
 </body></html>
