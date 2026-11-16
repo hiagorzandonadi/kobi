@@ -72,9 +72,9 @@ details p{font-size:14px;color:var(--mut);margin:8px 0 0}
 
 <div class="aviso">
   <div class="ai">📢</div>
-  <div><b>Pode baixar e usar agora!</b>
-  <p>Assim que sair a atualização oficial de hoje, às <b>15h</b>, o seu Kobi será atualizado automaticamente.</p>
-  <p>Comprou o <b>grupo do WhatsApp</b>? O acesso será liberado mais tarde.</p></div>
+  <div><b>Bem-vindo ao Kobi! 💚</b>
+  <p>Baixe abaixo e ative com o <b>e-mail da compra</b>. As atualizações chegam sozinhas: o próprio Kobi avisa quando sai versão nova.</p>
+  <p>Dica: em <b>Cérebro</b>, conecte a chave grátis da Groq (1 minuto) para o Kobi entender sua voz 100%.</p></div>
 </div>
 
 <div class="card">
@@ -97,9 +97,8 @@ details p{font-size:14px;color:var(--mut);margin:8px 0 0}
 
 <div class="card">
   <div class="step"><span class="n">2</span><b>Ative o Kobi</b></div>
-  <p class="tip" style="margin-top:0">Na primeira vez que abrir, o Kobi pede a <b style="color:var(--tx)">chave de ativação</b> ou o <b style="color:var(--tx)">e-mail da compra</b>. Use qualquer um:</p>
-  <div class="keybox"><div class="kl">🔑 Sua chave de ativação</div><div id="k" class="kv">KOBI-B55XEP-5175YE-MWT7NG-RHS3M0-AMND0C-TH1PVP-9ED71C-TG1CJ4-FH3W86-1DWHEV-QW20HS-FZ8W5E-WP1S9E-DCPSSA-TVMR1C-TSVK0S-ZQPM29-8RSH95-E5GC</div><a class="b p" href="#" id="cp" style="margin-top:10px">Copiar chave</a></div>
-  <div class="mail" style="margin-top:12px"><span class="ic">✉️</span><div>Ou digite o <b>e-mail que você usou na compra</b> e clique em <b>Ativar</b>.</div></div>
+  <p class="tip" style="margin-top:0">Na primeira vez que abrir, o Kobi pede o <b style="color:var(--tx)">e-mail da compra</b>:</p>
+  <div class="mail"><span class="ic">✉️</span><div>Digite o <b>mesmo e-mail que você usou para pagar na Cakto</b> e clique em <b>Ativar</b>. Ele libera o Kobi em até 2 computadores.</div></div>
   <details><summary>Não ativou?</summary>
     <p>Confira se é o mesmo e-mail da compra na Cakto. Se acabou de pagar, espere 1 minuto e tente de novo. Trocou de computador ou ainda deu erro? Chame a gente no Instagram <b>@kobi.ia</b> ou na aba <b>Suporte</b> do Kobi.</p>
   </details>
@@ -117,7 +116,7 @@ details p{font-size:14px;color:var(--mut);margin:8px 0 0}
   function pick(os){[].forEach.call(document.querySelectorAll('.osb'),function(b){b.classList.toggle('on',b.getAttribute('data-os')===os)});
     document.getElementById('v-win').classList.toggle('on',os==='win');document.getElementById('v-mac').classList.toggle('on',os==='mac');}
   [].forEach.call(document.querySelectorAll('.osb'),function(b){b.onclick=function(){pick(b.getAttribute('data-os'))}});
-  document.getElementById('cp').onclick=function(e){e.preventDefault();var t=document.getElementById('k').textContent,b=e.target;
+  var cp=document.getElementById('cp'); if(cp) cp.onclick=function(e){e.preventDefault();var t=document.getElementById('k').textContent,b=e.target;
     (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Chave copiada ✓'},function(){var r=document.createRange();r.selectNodeContents(document.getElementById('k'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selecionei: aperte Ctrl+C'})};
   var ua=navigator.userAgent||'';
   if(/Mac/.test(navigator.platform||'')||/Mac OS X/.test(ua))pick('mac');else if(/Windows/.test(ua))pick('win');
