@@ -28,6 +28,9 @@ a.b.p{background:linear-gradient(135deg,var(--acc),#6fe0a0);color:#07120a;border
 a.b{flex-direction:column;gap:2px}a.b small{font-weight:500;font-size:12.5px;opacity:.75}
 .mail{display:flex;gap:12px;align-items:center;background:rgba(155,243,90,.08);border:1px solid rgba(155,243,90,.25);border-radius:16px;padding:14px 16px;margin-top:6px}
 .mail .ic{font-size:26px}.mail b{color:var(--acc)}
+.keybox{background:rgba(0,0,0,.35);border:1px solid rgba(155,243,90,.3);border-radius:16px;padding:14px}
+.kl{font-size:13px;color:var(--mut);margin-bottom:6px;font-weight:600}
+.kv{font:13px/1.5 Consolas,ui-monospace,monospace;word-break:break-all;user-select:all;color:var(--acc)}
 .tip{font-size:14px;color:var(--mut);margin-top:10px}
 details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}summary{cursor:pointer;color:var(--tx);font-weight:600;font-size:14.5px}
 details p{font-size:14px;color:var(--mut);margin:8px 0 0}
@@ -83,9 +86,10 @@ details p{font-size:14px;color:var(--mut);margin:8px 0 0}
 </div>
 
 <div class="card">
-  <div class="step"><span class="n">2</span><b>Ative com o seu e-mail</b></div>
-  <div class="mail"><span class="ic">🔑</span><div>Na primeira vez que abrir, digite o <b>e-mail que você usou na compra</b> e clique em <b>Ativar</b>. Pronto!</div></div>
-  <p class="tip">Não precisa de chave: o seu e-mail é a sua licença. Cada compra ativa até <b style="color:var(--tx)">2 computadores</b> (ex.: o PC e o Mac).</p>
+  <div class="step"><span class="n">2</span><b>Ative o Kobi</b></div>
+  <p class="tip" style="margin-top:0">Na primeira vez que abrir, o Kobi pede a <b style="color:var(--tx)">chave de ativação</b> ou o <b style="color:var(--tx)">e-mail da compra</b>. Use qualquer um:</p>
+  <div class="keybox"><div class="kl">🔑 Sua chave de ativação</div><div id="k" class="kv">KOBI-B55XEP-5175YE-MWT7NG-RHS3M0-AMND0C-TH1PVP-9ED71C-TG1CJ4-FH3W86-1DWHEV-QW20HS-FZ8W5E-WP1S9E-DCPSSA-TVMR1C-TSVK0S-ZQPM29-8RSH95-E5GC</div><a class="b p" href="#" id="cp" style="margin-top:10px">Copiar chave</a></div>
+  <div class="mail" style="margin-top:12px"><span class="ic">✉️</span><div>Ou digite o <b>e-mail que você usou na compra</b> e clique em <b>Ativar</b>.</div></div>
   <details><summary>Não ativou?</summary>
     <p>Confira se é o mesmo e-mail da compra na Cakto. Se acabou de pagar, espere 1 minuto e tente de novo. Trocou de computador ou ainda deu erro? Chame a gente no Instagram <b>@kobi.ia</b> ou na aba <b>Suporte</b> do Kobi.</p>
   </details>
@@ -103,6 +107,8 @@ details p{font-size:14px;color:var(--mut);margin:8px 0 0}
   function pick(os){[].forEach.call(document.querySelectorAll('.osb'),function(b){b.classList.toggle('on',b.getAttribute('data-os')===os)});
     document.getElementById('v-win').classList.toggle('on',os==='win');document.getElementById('v-mac').classList.toggle('on',os==='mac');}
   [].forEach.call(document.querySelectorAll('.osb'),function(b){b.onclick=function(){pick(b.getAttribute('data-os'))}});
+  document.getElementById('cp').onclick=function(e){e.preventDefault();var t=document.getElementById('k').textContent,b=e.target;
+    (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Chave copiada ✓'},function(){var r=document.createRange();r.selectNodeContents(document.getElementById('k'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selecionei: aperte Ctrl+C'})};
   var ua=navigator.userAgent||'';
   if(/Mac/.test(navigator.platform||'')||/Mac OS X/.test(ua))pick('mac');else if(/Windows/.test(ua))pick('win');
 })();
