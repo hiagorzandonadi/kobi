@@ -1,15 +1,18 @@
 {
-  "version": "3.5.4",
+  "version": "3.5.5",
   "date": "2026-11-15",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.4/Kobi-Setup.exe",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.5/Kobi-Setup.exe",
   "macVersion": "3.5.4",
   "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.4/Kobi-Mac-arm64.dmg",
   "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.4/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Nova aba Avisos: recados e novidades da equipe do Kobi direto no app",
-    "Nova aba Suporte: fale com a equipe e receba a resposta aqui mesmo",
-    "Ativação pelo e-mail da compra, com licença pessoal que vale em até 2 computadores",
-    "Segurança: a chave de ativação antiga (compartilhada) foi desativada; quem comprou ativa com o e-mail"
+    "Escuta refeita do zero: o Kobi entende a frase inteira do jeito que você fala, não corta mais no meio e não deixa o nome grudado no pedido",
+    "Chamado bem mais certeiro: acorda quando você diz o nome dele (com ou sem \"Ei\") e não acorda mais quando o nome aparece no meio de uma conversa",
+    "Mais rápido: responde cerca de 1 segundo depois que você para de falar, e usa menos o processador enquanto escuta",
+    "Pausa para pensar no meio da frase não corta mais o pedido: ele junta tudo numa frase só",
+    "Spotify: corrigido o problema da conta que desconectava sozinha e do controle de música que parava de responder",
+    "Telas de Voz e Cérebro mais simples: o principal fica em cima e o resto em \"Mais opções\"",
+    "Novo botão \"Testar o chamado\" (Voz), que usa o mesmo detector do dia a dia"
   ]
 }
