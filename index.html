@@ -269,58 +269,85 @@
 </style>
 
 <style>
-  .cupom { background: linear-gradient(90deg, #1b3a0c, #0f2a1c 55%, #10263a); border-bottom: 1px solid #9BF35A66; color: var(--ink); }
-  .cupom .wrap { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: center; padding-block: 14px; text-align: center; }
-  .cupom .ct { display: block; width: 100%; font: 800 clamp(20px, 3.6vw, 30px)/1.15 var(--font-display); color: var(--glow); text-shadow: 0 0 24px #9BF35A44; }
-  .cupom .cs { display: block; width: 100%; font-size: clamp(14.5px, 2vw, 17px); }
-  .cupom .cs s { color: var(--mist); }
-  .cupom .code { font: 800 20px var(--font-mono); letter-spacing: .08em; color: var(--night); background: var(--glow); border: 0; border-radius: 10px; padding: 6px 14px; cursor: pointer; }
-  .cupom .code:hover { filter: brightness(1.08); }
-  .cupom .ccd { font: 700 17px var(--font-mono); color: var(--glow); background: #00000055; border: 1px solid #9BF35A66; border-radius: 10px; padding: 5px 10px; font-variant-numeric: tabular-nums; }
-  .cupom small { display: block; width: 100%; color: var(--mist); font-size: 13.5px; }
-  .cupom.fim .ct { color: var(--mist); text-shadow: none; }
+  .upd { position: relative; overflow: hidden; color: var(--ink); border-bottom: 1px solid var(--line);
+    background: radial-gradient(900px 260px at 15% -40%, #9BF35A2e, transparent 70%), radial-gradient(800px 260px at 90% 130%, #5AD8FF26, transparent 70%), linear-gradient(180deg, #13162a, #0f1122); }
+  .upd .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; align-items: center; padding-block: 22px; }
+  .upd .pill { display: inline-flex; align-items: center; gap: 8px; font: 700 12.5px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--glow); background: #9BF35A14; border: 1px solid #9BF35A55; border-radius: 99px; padding: 5px 12px; }
+  .upd .pill i { width: 8px; height: 8px; border-radius: 50%; background: var(--glow); box-shadow: 0 0 0 0 #9BF35A99; animation: updPulse 1.8s infinite; }
+  @keyframes updPulse { 0% { box-shadow: 0 0 0 0 #9BF35A99 } 70% { box-shadow: 0 0 0 9px #9BF35A00 } 100% { box-shadow: 0 0 0 0 #9BF35A00 } }
+  .upd h2 { margin: 10px 0 6px; font: 800 clamp(24px, 3.6vw, 34px)/1.1 var(--font-display); letter-spacing: -.01em; }
+  .upd h2 em { font-style: normal; background: linear-gradient(90deg, var(--glow), var(--sky)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .upd .lead { margin: 0 0 12px; color: var(--mist); font-size: 15px; }
+  .upd ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+  .upd li { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; }
+  .upd li span { flex: none; width: 22px; height: 22px; display: grid; place-items: center; border-radius: 7px; background: #5AD8FF1f; border: 1px solid #5AD8FF44; font-size: 12px; }
+  .cupom { position: relative; text-align: center; border-radius: 20px; padding: 18px 18px 16px; background: linear-gradient(160deg, #1b2b18, #141a2c); border: 1px solid #9BF35A55; box-shadow: 0 18px 50px -20px #9BF35A55, inset 0 1px 0 #ffffff12; }
+  .cupom::before, .cupom::after { content: ""; position: absolute; top: 50%; width: 18px; height: 18px; margin-top: -9px; border-radius: 50%; background: #10132a; border: 1px solid #9BF35A55; }
+  .cupom::before { left: -10px; } .cupom::after { right: -10px; }
+  .cupom .ct { display: block; font: 700 13px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--mist); }
+  .cupom .off { display: block; margin: 2px 0 4px; font: 800 clamp(34px, 5vw, 46px)/1 var(--font-display); color: var(--glow); text-shadow: 0 0 30px #9BF35A55; }
+  .cupom .cs { display: block; font-size: 15px; } .cupom .cs s { color: var(--mist); } .cupom .cs b { color: var(--ink); }
+  .cupom .code { margin: 12px auto 4px; display: inline-flex; align-items: center; gap: 10px; font: 800 21px var(--font-mono); letter-spacing: .12em; color: var(--ink); background: #00000055; border: 2px dashed var(--glow); border-radius: 12px; padding: 8px 16px; cursor: pointer; transition: transform .15s, background .15s; }
+  .cupom .code:hover { transform: translateY(-1px); background: #9BF35A1c; }
+  .cupom .code small { font: 700 11px var(--font-body); letter-spacing: 0; color: var(--night); background: var(--glow); border-radius: 6px; padding: 3px 7px; }
+  .cupom .ccd { display: flex; justify-content: center; gap: 8px; margin-top: 10px; }
+  .cupom .ccd div { min-width: 58px; padding: 6px 4px; border-radius: 10px; background: #00000059; border: 1px solid var(--line); }
+  .cupom .ccd b { display: block; font: 800 22px var(--font-mono); font-variant-numeric: tabular-nums; color: var(--ink); }
+  .cupom .ccd span { font-size: 11px; color: var(--mist); text-transform: uppercase; letter-spacing: .06em; }
+  .cupom .hint { display: block; margin-top: 10px; font-size: 12.5px; color: var(--mist); }
+  .cupom.fim .off { color: var(--mist); text-shadow: none; font-size: 26px; }
   .tk-cupom { margin: 10px 0 4px; padding: 10px 12px; border-radius: 12px; background: #9BF35A14; border: 1px dashed #9BF35A88; font-size: 14.5px; color: var(--ink); }
   .tk-cupom b { color: var(--glow); }
+  @media (max-width: 760px) { .upd .wrap { grid-template-columns: 1fr; gap: 16px; padding-block: 18px; } .upd h2 { margin-top: 8px; } }
+  @media (prefers-reduced-motion: reduce) { .upd .pill i { animation: none; } }
 </style>
-<div class="cupom" id="cupom"><div class="wrap">
-  <span class="ct">🎉 Oferta da atualização das 15:00 do Kobi</span>
-  <span class="cs">Use o cupom e leve <b>17% de desconto</b>: de <s>R$ 89,90</s> por <b>R$ 74,62</b>. Válido só até as <b>18:00 de hoje (16/11)</b>.</span>
-  <button class="code" id="cupomCode" type="button" title="Copiar cupom">KOBI50</button>
-  <span class="ccd" id="cupomCd" aria-live="polite">--:--:--</span>
-  <small>Clique no cupom para copiar e cole no campo de cupom na tela de pagamento.</small>
-</div></div>
+<section class="upd" id="urg"><div class="wrap">
+  <div>
+    <span class="pill"><i></i>Saiu hoje às 15:00 · versão 3.5.9</span>
+    <h2>O Kobi acabou de ganhar uma <em>atualização nova</em></h2>
+    <p class="lead">Para Windows e Mac. Quem já tem o Kobi recebe de graça, com aviso dentro do app.</p>
+    <ul>
+      <li><span>🗺️</span>Mapa de atualizações: veja o que vem por aí e vote nas próximas novidades</li>
+      <li><span>💬</span>Suporte renovado, com atalho no Início e central de ajuda no site</li>
+      <li><span>✉️</span>Botão "Ativar com e-mail" no seu perfil, ligado ao e-mail da compra</li>
+    </ul>
+  </div>
+  <div class="cupom" id="cupom">
+    <span class="ct">🎉 Oferta da atualização</span>
+    <span class="off">17% OFF</span>
+    <span class="cs">de <s>R$ 89,90</s> por <b>R$ 74,62</b> · só até as <b>18:00 de hoje</b></span>
+    <button class="code" id="cupomCode" type="button" title="Copiar cupom"><span id="cupomTxt">KOBI50</span><small>copiar</small></button>
+    <div class="ccd" id="cupomCd" aria-live="off"><div><b id="cdH">--</b><span>horas</span></div><div><b id="cdM">--</b><span>min</span></div><div><b id="cdS">--</b><span>seg</span></div></div>
+    <span class="hint">Cole o cupom no campo de cupom na tela de pagamento.</span>
+  </div>
+</div></section>
 <script>
 (function () {
   var END = Date.parse('2026-11-16T18:00:00-03:00'); // 18:00 de Brasília
-  var box = document.getElementById('cupom'), cd = document.getElementById('cupomCd'), tk = document.getElementById('tkCupom'), btn = document.getElementById('cupomCode');
+  var box = document.getElementById('cupom'), tk = document.getElementById('tkCupom'), btn = document.getElementById('cupomCode'), txt = document.getElementById('cupomTxt');
   function p(n) { return (n < 10 ? '0' : '') + n; }
   function tick() {
     var left = END - Date.now();
     if (left <= 0) {
       box.classList.add('fim');
-      box.querySelector('.wrap').innerHTML = '<span class="ct">Oferta da atualização das 15:00 encerrada</span><small>O cupom era válido até as 18:00 de 16/11. Obrigado a quem aproveitou!</small>';
+      box.innerHTML = '<span class="ct">Oferta da atualização</span><span class="off">Encerrada</span><span class="hint">O cupom valeu até as 18:00 de 16/11. Obrigado a quem aproveitou!</span>';
       if (tk) tk.remove();
       if (Date.now() - END > 6 * 3600e3) box.remove();
       return;
     }
     var s = Math.floor(left / 1000);
-    cd.textContent = 'termina em ' + p(Math.floor(s / 3600)) + ':' + p(Math.floor(s % 3600 / 60)) + ':' + p(s % 60);
+    document.getElementById('cdH').textContent = p(Math.floor(s / 3600));
+    document.getElementById('cdM').textContent = p(Math.floor(s % 3600 / 60));
+    document.getElementById('cdS').textContent = p(s % 60);
     setTimeout(tick, 1000);
   }
   btn.addEventListener('click', function () {
     try { navigator.clipboard.writeText('KOBI50'); } catch (e) {}
-    btn.textContent = 'Copiado ✓'; setTimeout(function () { btn.textContent = 'KOBI50'; }, 1600);
+    txt.textContent = 'COPIADO ✓'; setTimeout(function () { txt.textContent = 'KOBI50'; }, 1600);
   });
   tick();
 })();
 </script>
-
-<div class="urg" id="urg"><div class="wrap">
-  <span class="big">🔥 Último lote disponível</span>
-  <span class="vagas" id="vagasBox" style="display:none"><span class="vn">Restam <b id="vagasN">45</b> de <span id="vagasT">50</span> vagas</span><span class="vbar"><i id="vagasBar" style="width:90%"></i></span></span>
-  <span class="sub">Só <b>50 acessos</b> por <b>R$ 89,90</b>, vitalício e com <b>IA grátis</b>. Quando esgotar, o Kobi passa a ser por <b>mensalidade</b>.</span>
-    <small>Quem compra agora paga uma vez só e fica com ele para sempre, com as atualizações incluídas.</small>
-</div></div>
 
 <header class="nav"><div class="wrap">
   <a class="brand" href="#topo"><span id="logoKobi"></span>Kobi</a>
@@ -330,7 +357,7 @@
 
 <main id="topo">
   <div class="wrap hero" id="demo">
-    <div class="eyebrow">para Windows e Mac · versão 3.5.0</div>
+    <div class="eyebrow">para Windows e Mac · versão 3.5.9</div>
     <h1>Um amigo que mora no <em>topo da sua tela</em>.</h1>
     <p class="lead">O Kobi vive no entalho do seu PC. Diga "Ei, Kobi" e ele toca suas músicas, marca seus lembretes, cuida das tarefas e conversa com você. Já vem com IA gratuita: você paga uma vez só e nunca mais paga nada, nem mensalidade, nem assinatura.</p>
     <div class="ctas"><button class="btn btn-primary" data-buy>Comprar o Kobi · R$ 89,90</button><a class="btn btn-ghost" href="#funcoes">Ver o que ele faz</a></div>
@@ -802,7 +829,7 @@
     const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const cheap = Date.now() < new Date('2026-11-15T19:00:00-03:00').getTime();
     const LINES = ['Compra… compra… 👀', 'Psiu! R$ 89,90 uma vez só', 'Sem mensalidade, hein!', 'Tô te seguindo, percebeu? 😄', 'Me leva pra casa 🥺', 'Prometo não pedir aumento', 'Eu toco suas músicas 🎵', 'O botão verde não morde…', 'Já me imaginou no seu PC?', 'Pode me chamar de Sexta-Feira 😎', 'Compra… compra… compra…', 'Eu lembro seus compromissos. Lembra de me comprar? 😏', 'Sou fofo E útil. Raro, né?']
-      .concat(['Último lote: só 50 acessos! 🔥']);
+      .concat(['Atualização nova saiu hoje! 🎉', 'Cupom KOBI50: 17% off até as 18h 🤫']);
     let li = Math.floor(Math.random() * LINES.length), bubT = 0, forced = false;
     const say = (t, ms) => { bub.textContent = t; el.classList.add('talk'); clearTimeout(bubT); bubT = setTimeout(() => { el.classList.remove('talk'); forced = false; }, ms || 3200); };
     setInterval(() => { if (el.classList.contains('on') && !forced) { say(LINES[li++ % LINES.length]); } }, 5200);
@@ -862,6 +889,7 @@
 (function () {
   var U = 'https://kobi-licencas.hiagorzandonadi.workers.dev/vagas';
   function upd() {
+    if (!document.getElementById('vagasBox')) return;
     fetch(U, { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
       if (!j || typeof j.restam !== 'number' || !j.ativo) { document.getElementById('vagasBox').style.display = 'none'; return; }
       document.getElementById('vagasBox').style.display = '';
