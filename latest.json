@@ -1,17 +1,14 @@
 {
-  "version": "4.9.4",
+  "version": "4.9.5",
   "date": "2026-11-16",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.4/Kobi-Setup.exe",
-  "macVersion": "4.9.4",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.4/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.4/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.5/Kobi-Setup.exe",
+  "macVersion": "4.9.5",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.5/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.5/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Música mais esperta: o Kobi corrige o nome que a voz entendeu errado (\"esse DC\" vira AC/DC) e aprende os artistas que você ouve",
-    "Início em tela cheia: mais widgets (tocando agora, tarefas, clima, uso do PC, atalhos e nível)",
-    "Minha conta mostra o seu plano (vitalício ou assinatura) e quando renova",
-    "Assinatura mensal: quando vence, o Kobi pede para renovar e volta na hora depois do pagamento",
-    "Passo recomendado no Início: conecte a chave grátis da Groq para a voz funcionar 100%",
-    "Cancelar a assinatura direto em Minha conta: sem novas cobranças e o Kobi segue até o fim do mês pago"
+    "Boas-vindas nova, passo a passo: conectar as IAs grátis, escolher e testar a tecla de falar e configurar o microfone com \"Ei, Kobi\"",
+    "Nova aba Música: escolha onde tocar (Spotify, YouTube Music, Deezer, YouTube ou navegador)",
+    "Se o Spotify travar ou não estiver instalado, o Kobi toca no YouTube Music sozinho"
   ]
 }
