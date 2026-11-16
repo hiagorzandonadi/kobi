@@ -1,15 +1,14 @@
 {
-  "version": "3.5.8",
+  "version": "3.5.9",
   "date": "2026-11-16",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.8/Kobi-Setup.exe",
-  "macVersion": "3.5.8",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.8/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.8/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.9/Kobi-Setup.exe",
+  "macVersion": "3.5.9",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.9/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v3.5.9/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Muito menos memória: o Kobi não acumula mais cópias do reconhecedor de voz a cada abertura (em alguns PCs passava de 4 GB)",
-    "A IA local agora usa o modelo leve e sai da memória quando fica parada",
-    "Entalho agora fica em Visual: escolha Kobi ou Entalho e personalize ali mesmo",
-    "Mais leve parado: menos trabalho em segundo plano"
+    "Novo: Mapa de atualizações, veja o que vem por aí e vote nas próximas novidades",
+    "Suporte renovado: atalho no Início e central de ajuda no site",
+    "Botão \"Ativar com e-mail\" no seu perfil, para ligar o Kobi ao e-mail da compra"
   ]
 }
