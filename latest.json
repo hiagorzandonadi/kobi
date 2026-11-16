@@ -1,12 +1,12 @@
 {
-  "version": "4.9.6",
+  "version": "4.9.7",
   "date": "2026-11-16",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.6/Kobi-Setup.exe",
-  "macVersion": "4.9.6",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.6/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.6/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.7/Kobi-Setup.exe",
+  "macVersion": "4.9.7",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.7/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.7/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Cartões bonitos no entalho: clima com sol ou chuva, temperatura e chance de chuva; timer e cronômetro ao vivo; hora; dias até uma data; uso do PC"
+    "O cartão do timer aparece grande só na hora de criar e logo volta ao tamanho pequeno"
   ]
 }
