@@ -1,12 +1,16 @@
 {
-  "version": "4.9.2",
+  "version": "4.9.3",
   "date": "2026-11-16",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.2/Kobi-Setup.exe",
-  "macVersion": "4.9.2",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.2/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.2/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.3/Kobi-Setup.exe",
+  "macVersion": "4.9.3",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.3/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.3/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Correção no áudio: se o som do PC demorar para iniciar, o microfone e a voz do Kobi não travam mais (ele usa o jeito antigo de captura)"
+    "Nome fixo em \"Kobi\" por enquanto: o chamado reconhece bem só o \"Ei, Kobi\". Em breve dá para trocar de novo",
+    "O \"Ei, Kobi\" funciona mesmo quando a nuvem escreve o nome um pouco diferente",
+    "\"Abre o YouTube\" agora só abre o YouTube, sem tocar um vídeo aleatório",
+    "Voz configurada no melhor jeito para todos: entendimento pela nuvem, ditado preciso e aprender com o uso; voz Mordomo para quem estava na voz padrão (no Windows ela baixa sozinha)",
+    "Tela de Voz mostra certo quando a Groq ou a voz na nuvem do Kobi estão funcionando"
   ]
 }
