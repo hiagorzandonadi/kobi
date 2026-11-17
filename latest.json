@@ -1,19 +1,15 @@
 {
-  "version": "4.9.11",
+  "version": "4.9.12",
   "date": "2026-11-17",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.11/Kobi-Setup.exe",
-  "macVersion": "4.9.11",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.11/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.11/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.12/Kobi-Setup.exe",
+  "macVersion": "4.9.12",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.12/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.12/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
-  "linuxVersion": "4.9.11",
-  "urlLinux": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.11/Kobi-Linux.AppImage",
+  "linuxVersion": "4.9.12",
+  "urlLinux": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.12/Kobi-Linux.AppImage",
   "notes": [
-    "Kobi para Linux! AppImage (qualquer distribuição) e .deb (Ubuntu/Debian)",
-    "Novo Modo imersivo: tela cheia com o Kobi no centro reagindo à sua voz, agenda, uso do PC e música (embaixo de Meu PC, ou diga \"ativa o modo imersivo\")",
-    "Responda o Kobi ou a IA direto no balão do entalho, sem abrir nada",
-    "Os botões das IAs (Kobi, Claude Code…) ficam sempre no topo da Conversa, com o botão para procurar IAs no PC",
-    "O balão sempre mostra a resposta mais nova da IA",
-    "Codex e Gemini são encontrados mesmo quando instalados fora do caminho padrão"
+    "Ativação mais simples: agora é só o e-mail da compra (sem chave)",
+    "Botão \"Atualizar\" no canto do entalho quando sai versão nova, com o download ali mesmo"
   ]
 }
