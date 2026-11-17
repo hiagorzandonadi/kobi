@@ -1,15 +1,15 @@
 {
-  "version": "4.9.12",
+  "version": "4.9.13",
   "date": "2026-11-17",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.12/Kobi-Setup.exe",
-  "macVersion": "4.9.12",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.12/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.12/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.13/Kobi-Setup.exe",
+  "macVersion": "4.9.13",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.13/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.13/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
-  "linuxVersion": "4.9.12",
-  "urlLinux": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.12/Kobi-Linux.AppImage",
+  "linuxVersion": "4.9.13",
+  "urlLinux": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.13/Kobi-Linux.AppImage",
   "notes": [
-    "Ativação mais simples: agora é só o e-mail da compra (sem chave)",
-    "Botão \"Atualizar\" no canto do entalho quando sai versão nova, com o download ali mesmo"
+    "Mais computadores: cada compra vale em 2 PCs, e agora dá para comprar acessos extras (R$ 25 cada) em Minha conta. O acesso entra sozinho no seu e-mail",
+    "Na ativação, se a compra já estiver nos 2 PCs, o Kobi mostra na hora como liberar mais um"
   ]
 }
