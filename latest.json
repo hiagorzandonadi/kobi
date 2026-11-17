@@ -1,12 +1,26 @@
 {
-  "version": "4.9.8",
-  "date": "2026-11-16",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.8/Kobi-Setup.exe",
-  "macVersion": "4.9.8",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.8/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.8/Kobi-Mac-x64.dmg",
+  "version": "4.9.10",
+  "date": "2026-11-17",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.10/Kobi-Setup.exe",
+  "macVersion": "4.9.10",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.10/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.10/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
   "notes": [
-    "Responder o WhatsApp pelo entalho: clique na notificação, escreva e aperte Enter (na primeira vez o Kobi pede o número da pessoa e guarda)"
+    "Nova aba Inteligência Artificial: o Kobi acha o Claude Code, o Codex e o Gemini do seu PC e você conversa com eles pelo entalho",
+    "Diga \"Ei Kobi, usa o Claude Code\" e fale com ele por voz; o entalho mostra o símbolo dele enquanto estiver ativo",
+    "A IA cria sites e arquivos e você acompanha ao vivo: cada passo, o que ela está escrevendo e o botão de prévia",
+    "A IA pode pedir para mandar e-mail, criar lembrete ou tarefa; você confirma no botão ou dizendo \"sim\"",
+    "Conexões (MCP): ligue o Kobi ao Zapier, GitHub, Notion, Home Assistant e outros",
+    "Entalho no modo Ilha: escolha nas configurações do entalho",
+    "Painel do entalho mais alto (Configurações sempre à vista)",
+    "Rotinas com aba própria: abrir apps, arquivos e sites, organizar janelas nos monitores, minimizar, VPN, esperar e falar quando terminar; crie por voz e funcione sem internet",
+    "Resumo do dia personalizável: saudação, tarefas, o que ficou de antes, agenda, clima, e-mails e notícias",
+    "Memória automática: o Kobi guarda sozinho o que for importante, e a aba Memória mostra tudo em mapa",
+    "WhatsApp no Kobi: responda as mensagens pelo entalho, na conversa certa (ligue em Celular)",
+    "Perplexity como cérebro (com a sua chave)",
+    "Clima clicável para trocar a cidade",
+    "Fechar notificações no ✕",
+    "O selo do perfil mostra o plano certo"
   ]
 }
