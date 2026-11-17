@@ -1,16 +1,15 @@
 {
-  "version": "4.9.15",
+  "version": "4.9.16",
   "date": "2026-11-17",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.15/Kobi-Setup.exe",
-  "macVersion": "4.9.15",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.15/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.15/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.16/Kobi-Setup.exe",
+  "macVersion": "4.9.16",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.16/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.16/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
-  "linuxVersion": "4.9.15",
-  "urlLinux": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.15/Kobi-Linux.AppImage",
+  "linuxVersion": "4.9.16",
+  "urlLinux": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.16/Kobi-Linux.AppImage",
   "notes": [
-    "Memória inteligente: quando você pergunta algo sobre você (\"eu trabalho com o quê?\"), o Kobi mostra o cérebro procurando nas suas memórias, também com o chat aberto",
-    "Vários pedidos numa frase só (\"toca Spotify e dá uma verificada no PC\") agora fazem tudo, não só o primeiro",
-    "Ativação: todo mundo agora ativa pelo e-mail da compra (mais seguro)"
+    "Revenda: agora você pode revender o Kobi e ganhar 35% de cada venda (Minha conta → Revenda)",
+    "Grupo do WhatsApp: botão Verificar mostra se o seu acesso está confirmado; o grupo será liberado dia 18/11 às 15:00"
   ]
 }
