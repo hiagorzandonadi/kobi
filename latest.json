@@ -1,14 +1,16 @@
 {
-  "version": "4.9.18",
+  "version": "4.9.19",
   "date": "2026-11-18",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.18/Kobi-Setup.exe",
-  "macVersion": "4.9.18",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.18/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.18/Kobi-Mac-x64.dmg",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.19/Kobi-Setup.exe",
+  "macVersion": "4.9.19",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.19/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.19/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
-  "linuxVersion": "4.9.18",
-  "urlLinux": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.18/Kobi-Linux.AppImage",
+  "linuxVersion": "4.9.19",
+  "urlLinux": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.19/Kobi-Linux.AppImage",
   "notes": [
-    "Melhorias e correções na gaveta do entalho e nos layouts novos do Início"
+    "Timer: arraste a barrinha para escolher o tempo e solte para começar",
+    "Gaveta: selecione vários itens arrastando o mouse, e arraste um vídeo do YouTube para guardar a capa ou o link",
+    "Atalho para falar com os botões laterais do mouse (Windows)"
   ]
 }
