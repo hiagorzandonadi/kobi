@@ -1,15 +1,16 @@
 {
-  "version": "4.9.16",
-  "date": "2026-11-17",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.16/Kobi-Setup.exe",
-  "macVersion": "4.9.16",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.16/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.16/Kobi-Mac-x64.dmg",
+  "version": "4.9.17",
+  "date": "2026-11-18",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.17/Kobi-Setup.exe",
+  "macVersion": "4.9.17",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.17/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.17/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
-  "linuxVersion": "4.9.16",
-  "urlLinux": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.16/Kobi-Linux.AppImage",
+  "linuxVersion": "4.9.17",
+  "urlLinux": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.17/Kobi-Linux.AppImage",
   "notes": [
-    "Revenda: agora você pode revender o Kobi e ganhar 35% de cada venda (Minha conta → Revenda)",
-    "Grupo do WhatsApp: botão Verificar mostra se o seu acesso está confirmado; o grupo será liberado dia 18/11 às 15:00"
+    "Gaveta no entalho: arraste arquivos ou imagens de qualquer site para o entalho e eles ficam guardados em Copiados. Depois é só arrastar para o WhatsApp, e-mail ou uma pasta (dá para selecionar vários)",
+    "4 layouts novos para o Início do entalho: Painel, Atalhos, Música em destaque e Relógio",
+    "Escolha quais funções aparecem no menu do entalho (Configurações → Visual → Entalho) e até 6 cartões"
   ]
 }
