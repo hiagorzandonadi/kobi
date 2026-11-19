@@ -1,16 +1,17 @@
 {
-  "version": "4.9.19",
-  "date": "2026-11-18",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.19/Kobi-Setup.exe",
-  "macVersion": "4.9.19",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.19/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.19/Kobi-Mac-x64.dmg",
+  "version": "4.9.21",
+  "date": "2026-11-19",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.21/Kobi-Setup.exe",
+  "macVersion": "4.9.21",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.21/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.21/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
-  "linuxVersion": "4.9.19",
-  "urlLinux": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.19/Kobi-Linux.AppImage",
+  "linuxVersion": "4.9.21",
+  "urlLinux": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.21/Kobi-Linux.AppImage",
   "notes": [
-    "Timer: arraste a barrinha para escolher o tempo e solte para começar",
-    "Gaveta: selecione vários itens arrastando o mouse, e arraste um vídeo do YouTube para guardar a capa ou o link",
-    "Atalho para falar com os botões laterais do mouse (Windows)"
+    "Gravar a tela: grave a tela toda ou só uma área, com microfone, som do PC e webcam. Dá para ver a prévia da webcam e escolher o formato, a posição, o FPS, a resolução e o tipo do arquivo",
+    "Gaveta: arraste um vídeo do YouTube e escolha baixar o vídeo, só a música, a capa ou o link",
+    "Os avisos agora ficam no sininho, ao lado do seu perfil",
+    "Correções: o \"Meu Kobi\" volta a abrir, \"abrir YouTube Music\" abre o site certo e a voz neural ficou mais estável. Para quem não vê o entalho, tem o Modo de compatibilidade no ícone da bandeja"
   ]
 }
