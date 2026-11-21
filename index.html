@@ -241,6 +241,41 @@
   .urg b { color: var(--warn); }
   .urg .cd { font: 700 17px var(--font-mono); color: var(--warn); background: #00000055; border: 1px solid #FFB34066; border-radius: 10px; padding: 3px 10px; font-variant-numeric: tabular-nums; }
   .urg small { display: block; width: 100%; color: var(--mist); font-size: 13px; }
+  .jv { display: grid; grid-template-columns: 1fr 1.05fr; gap: 28px; align-items: center; }
+  .jv-player { position: relative; border-radius: 24px; padding: 26px 22px; text-align: center; overflow: hidden;
+    background: radial-gradient(420px 220px at 50% 0%, #5AD8FF26, transparent 70%), linear-gradient(170deg, #122036, #0f1224); border: 1px solid #5AD8FF44; box-shadow: 0 24px 60px -28px #5AD8FF66; }
+  .jv-ring { position: relative; width: 132px; height: 132px; margin: 4px auto 14px; border-radius: 50%; display: grid; place-items: center;
+    isolation: isolate; }
+  .jv-ring::after { content: ""; position: absolute; inset: 0; z-index: 0; border-radius: 50%; background: conic-gradient(from 0deg, #5AD8FF, #5AD8FF22, #5AD8FF, #5AD8FF22, #5AD8FF); }
+  .jv-ring::before { content: ""; position: absolute; inset: 7px; z-index: 1; border-radius: 50%; background: radial-gradient(circle, #5AD8FF33 0 55%, #0f1426 56%); }
+  .jv-play { position: relative; z-index: 2; width: 82px; height: 82px; border-radius: 50%; border: 0; cursor: pointer; background: var(--sky); color: #06121f; font-size: 30px; display: grid; place-items: center; box-shadow: 0 0 0 0 #5AD8FF88; transition: transform .15s; }
+  .jv-play:hover { transform: scale(1.05); }
+  .jv-player.on .jv-ring::after { animation: jvSpin 3.5s linear infinite; }
+  .jv-player.on .jv-play { animation: jvPulse 1.4s infinite; }
+  @keyframes jvSpin { to { transform: rotate(360deg); } }
+  @keyframes jvPulse { 0% { box-shadow: 0 0 0 0 #5AD8FF88 } 70% { box-shadow: 0 0 0 16px #5AD8FF00 } 100% { box-shadow: 0 0 0 0 #5AD8FF00 } }
+  .jv-player.on .jv-play svg { display: none; } .jv-play .stop { display: none; } .jv-player.on .jv-play .stop { display: block; }
+  .jv-cap { min-height: 44px; font-size: 15px; color: var(--ink); font-style: italic; }
+  .jv-dots button { white-space: nowrap; }
+  .jv-dots { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px; }
+  .jv-dots button { border: 1px solid #5AD8FF55; background: #00000040; color: var(--mist); border-radius: 99px; padding: 5px 11px; font: 600 12.5px var(--font-body); cursor: pointer; }
+  .jv-dots button.cur { background: #5AD8FF22; color: var(--ink); border-color: var(--sky); }
+  .jv-hint { display: block; margin-top: 10px; font-size: 12.5px; color: var(--mist); }
+  .jv-info h3 { margin: 0 0 6px; font: 800 20px var(--font-display); }
+  .jv-note { margin: 14px 0; padding: 14px 16px; border-radius: 14px; background: #FFB34012; border: 1px solid #FFB34055; font-size: 14.5px; color: var(--ink); }
+  .jv-note b { color: var(--warn); }
+  .jv-packs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0; }
+  .jv-pack { border-radius: 14px; padding: 12px 10px; text-align: center; background: var(--dusk); border: 1px solid var(--line); }
+  .jv-pack small { display: block; color: var(--mist); font-size: 12.5px; text-transform: uppercase; letter-spacing: .05em; }
+  .jv-pack b { display: block; font: 800 19px var(--font-display); margin: 4px 0 2px; }
+  .jv-pack span { font-size: 13px; color: var(--mist); }
+  .jv-pack .jv-dur { display: block; margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--line); font-style: normal; font-size: 12.5px; font-weight: 700; color: var(--sky); }
+  .jv-bonus { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 7px; font-size: 14.5px; }
+  .jv-bonus li::before { content: "🎁 "; }
+  .jv-fine { margin-top: 10px; font-size: 13px; color: var(--mist); }
+  @media (max-width: 820px) { .jv { grid-template-columns: 1fr; } }
+  @media (max-width: 420px) { .jv-packs { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { .jv-player.on .jv-ring::after, .jv-player.on .jv-play { animation: none; } }
   #logoKobi { transition: opacity .25s; }
   #buddy { position: fixed; left: 0; top: 0; z-index: 60; width: 46px; height: 46px; pointer-events: none; opacity: 0; transition: opacity .3s; will-change: transform; }
   #buddy.on { opacity: 1; }
@@ -256,14 +291,9 @@
   #buddy.chill .bd-body svg { transform: rotate(-24deg); transition: transform .4s .35s; }
 </style>
 
-<div class="urg" id="urg"><div class="wrap">
-  <span>🔥 <b>Vitalício de volta, por enquanto:</b> muita gente pediu, então liberamos o Kobi vitalício por <b>R$ 89,90</b> (pagamento único, sem mensalidade). Ele encerra em breve, porque quanto mais usuários, maiores os custos com suporte. Aproveite!</span>
-  <small>Muita gente pediu porque só viu agora. Não dá para manter o preço antigo: quanto mais usuários, mais suporte, e isso tem custo. Pagamento único, sem mensalidade.</small>
-</div></div>
-
 <header class="nav"><div class="wrap">
   <a class="brand" href="#topo"><span id="logoKobi"></span>Kobi</a>
-  <nav><a href="#demo">Demonstração</a><a href="#funcoes">Funções</a><a href="#instalar">Instalar</a><a href="#preco">Preço</a><a href="#duvidas">Dúvidas</a></nav>
+  <nav><a href="#demo">Demonstração</a><a href="#funcoes">Funções</a><a href="#jarvis">J.A.R.V.I.S.</a><a href="#instalar">Instalar</a><a href="#preco">Preço</a><a href="#duvidas">Dúvidas</a></nav>
   <button class="btn btn-primary" data-buy>Comprar · R$ 89,90</button>
 </div></header>
 
@@ -385,6 +415,54 @@
     </div>
   </div></section>
 
+  <section id="jarvis"><div class="wrap">
+    <div class="sec-head"><h2>A voz do J.A.R.V.I.S. no seu PC.</h2><p>Uma voz realista no estilo do assistente dos filmes, com aquele jeitão elegante e um pouco sarcástico. Aperte o play e ouça o Kobi falando com ela.</p></div>
+    <div class="jv">
+      <div class="jv-player" id="jvPlayer">
+        <div class="jv-ring"><button class="jv-play" id="jvPlay" type="button" aria-label="Ouvir a voz do J.A.R.V.I.S."><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="stop" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor"/></svg></button></div>
+        <div class="jv-cap" id="jvCap">"Às suas ordens, senhor."</div>
+        <div class="jv-dots" id="jvDots"></div>
+        <span class="jv-hint">Cada clique toca uma fala diferente.</span>
+      </div>
+      <div class="jv-info">
+        <div class="jv-note"><b>A voz do J.A.R.V.I.S. não é grátis.</b> No Kobi você já tem acesso vitalício a todas as funções, inteligência artificial gratuita, todas as atualizações e várias vozes grátis. A voz do J.A.R.V.I.S. é um extra opcional, comprado dentro do app. Tentamos de várias formas deixá-la de graça, mas a voz realista é gerada por uma API de voz que cobra por cada fala.</div>
+        <h3>Pague só o que usar</h3>
+        <div class="jv-packs">
+          <div class="jv-pack"><small>Básico</small><b>R$ 49,90</b><span>1.000 respostas</span><i class="jv-dur">⏱ dura 1 mês e 3 dias</i></div>
+          <div class="jv-pack"><small>Plus</small><b>R$ 89,90</b><span>2.000 respostas</span><i class="jv-dur">⏱ dura 2 meses e 7 dias</i></div>
+          <div class="jv-pack"><small>Pro</small><b>R$ 169,90</b><span>4.000 respostas</span><i class="jv-dur">⏱ dura 4 meses e 13 dias</i></div>
+        </div>
+        <div class="jv-fine"><b>O tempo é falando com ele todo dia.</b> Se você não usar, o crédito continua lá: não expira e dura para sempre. Sem mensalidade. Para comprar: no Kobi, abra <b>Voz</b>, toque no cartão <b>J.A.R.V.I.S.</b> e depois em <b>Comprar / ver uso</b>.</div>
+        <ul class="jv-bonus">
+          <li><b>Protocolo Despertar:</b> a rotina de bom dia dos vídeos do Instagram, já configurada</li>
+          <li>Novas habilidades do J.A.R.V.I.S. de presente, conforme forem lançadas</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+  <script>
+  (function () {
+    var S = [
+      { f: 'audio/jarvis-1.mp3', t: 'Apresentação', c: '"Às suas ordens, senhor. J.A.R.V.I.S. online."' },
+      { f: 'audio/jarvis-2.mp3', t: 'Bom dia', c: 'Bom dia, previsão do tempo e o lembrete do guarda-chuva.' },
+      { f: 'audio/jarvis-3.mp3', t: 'Spotify', c: 'Abrindo o Spotify, com um pouquinho de sarcasmo.' },
+      { f: 'audio/jarvis-4.mp3', t: 'Lembrete', c: 'Um lembrete do jeito que só ele dá.' }
+    ];
+    var box = document.getElementById('jvPlayer'), btn = document.getElementById('jvPlay'), cap = document.getElementById('jvCap'), dots = document.getElementById('jvDots');
+    var au = new Audio(), i = -1, next = 0;
+    au.preload = 'none';
+    S.forEach(function (s, k) { var b = document.createElement('button'); b.type = 'button'; b.textContent = s.t; b.onclick = function () { play(k); }; dots.appendChild(b); });
+    function mark() { [].forEach.call(dots.children, function (b, k) { b.classList.toggle('cur', k === i); }); }
+    function stop() { au.pause(); box.classList.remove('on'); }
+    function play(k) {
+      i = k; next = (k + 1) % S.length; au.src = S[k].f; cap.textContent = S[k].c; mark();
+      box.classList.add('on'); var p = au.play(); if (p && p.catch) p.catch(stop);
+    }
+    au.addEventListener('ended', stop);
+    btn.addEventListener('click', function () { if (box.classList.contains('on')) stop(); else play(next); });
+  })();
+  </script>
+
   <section id="preco"><div class="wrap pricing">
     <div class="ticket">
       <div class="tag">kobi · licença vitalícia</div>
@@ -406,6 +484,7 @@
     <div class="sec-head"><h2>Dúvidas</h2></div>
     <div class="faq">
       <details><summary>Tem mensalidade?</summary><p>Não. Você paga R$ 89,90 uma vez só e o Kobi é seu, com as atualizações incluídas. Não tem plano, assinatura nem cobrança todo mês.</p></details>
+      <details><summary>A voz do J.A.R.V.I.S. vem inclusa?</summary><p>Não. O Kobi vem com várias vozes grátis. A voz do J.A.R.V.I.S. é um extra opcional, comprado dentro do app em pacotes de respostas (a partir de R$ 49,90 por 1.000 respostas), sem mensalidade e sem prazo para usar. Ela é cobrada porque a voz realista é gerada por uma API de voz que cobra por cada fala.</p></details>
       <details><summary>Como eu recebo o Kobi?</summary><p>Depois que o pagamento é aprovado (no PIX é na hora), você recebe no seu e-mail o link para baixar o instalador, com o passo a passo para ativar na primeira vez que abrir. Se não achar o e-mail, olhe a caixa de spam.</p></details>
       <details><summary>Preciso pagar alguma IA?</summary><p>Não. O Kobi já vem com IA gratuita, sem mensalidade. Ele pode usar uma IA que roda no seu PC. Se quiser, também pode conectar o Claude, o ChatGPT, o Gemini ou o Groq com a sua chave; nesse caso, o uso é cobrado pela empresa da IA (Gemini e Groq têm cota grátis).</p></details>
       <details><summary>Ele fica ouvindo tudo o que eu falo?</summary><p>O modo "sempre ouvindo" é opcional. Quando ligado, o reconhecimento acontece no seu computador e o Kobi só reage quando você diz "Ei, Kobi".</p></details>
@@ -726,7 +805,9 @@
       <div style="display:grid;gap:10px;margin-top:18px">${/^https:/.test(CHECKOUT_URL) ? `<a class="btn btn-primary" style="width:100%" href="${esc(CHECKOUT_URL)}" target="_blank" rel="noopener">Pagar com PIX ou cartão</a>` : '<div class="fine">As vendas abrem em instantes. Volte daqui a pouco.</div>'}</div>
       <div class="fine" style="margin-top:14px">O pagamento é feito na Cakto, com segurança. Assim que for aprovado, o link para baixar o Kobi chega no seu e-mail.</div>`;
   }
-  document.querySelectorAll('[data-buy]').forEach((b) => b.addEventListener('click', () => { if (/^https:/.test(CHECKOUT_URL)) { window.open(CHECKOUT_URL, '_blank', 'noopener'); return; } modal.hidden = false; stepCheckout(); }));
+  // compra pelo Mercado Pago: tela de escolha do próprio site (comprar.html), levando junto ?cupom=… e utm se tiver
+  const COMPRAR_URL = 'comprar.html';
+  document.querySelectorAll('[data-buy]').forEach((b) => b.addEventListener('click', () => { if (COMPRAR_URL) { location.href = COMPRAR_URL + location.search; return; } if (/^https:/.test(CHECKOUT_URL)) { window.open(CHECKOUT_URL, '_blank', 'noopener'); return; } modal.hidden = false; stepCheckout(); }));
   document.getElementById('mx').onclick = () => { modal.hidden = true; };
   modal.addEventListener('click', async (e) => {
     if (e.target === modal) { modal.hidden = true; return; }
