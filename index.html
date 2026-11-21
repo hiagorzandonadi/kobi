@@ -241,6 +241,9 @@
   .urg b { color: var(--warn); }
   .urg .cd { font: 700 17px var(--font-mono); color: var(--warn); background: #00000055; border: 1px solid #FFB34066; border-radius: 10px; padding: 3px 10px; font-variant-numeric: tabular-nums; }
   .urg small { display: block; width: 100%; color: var(--mist); font-size: 13px; }
+  .jv-video { margin: 0 0 26px; }
+  .jv-video video { display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid #5AD8FF44; background: #0b1020; box-shadow: 0 24px 60px -30px #5AD8FF77; }
+  .jv-video figcaption { margin-top: 10px; text-align: center; font-size: 14px; color: var(--mist); }
   .jv { display: grid; grid-template-columns: 1fr 1.05fr; gap: 28px; align-items: center; }
   .jv-player { position: relative; border-radius: 24px; padding: 26px 22px; text-align: center; overflow: hidden;
     background: radial-gradient(420px 220px at 50% 0%, #5AD8FF26, transparent 70%), linear-gradient(170deg, #122036, #0f1224); border: 1px solid #5AD8FF44; box-shadow: 0 24px 60px -28px #5AD8FF66; }
@@ -417,6 +420,12 @@
 
   <section id="jarvis"><div class="wrap">
     <div class="sec-head"><h2>A voz do J.A.R.V.I.S. no seu PC.</h2><p>Uma voz realista no estilo do assistente dos filmes, com aquele jeitão elegante e um pouco sarcástico. Aperte o play e ouça o Kobi falando com ela.</p></div>
+    <figure class="jv-video">
+      <video controls playsinline preload="metadata" poster="video/jarvis-rotina-capa.png" width="1180" height="330">
+        <source src="video/jarvis-rotina.mp4" type="video/mp4">
+      </video>
+      <figcaption>▶ Dê o play com som: o J.A.R.V.I.S. apresentando a rotina de bom dia no entalhe do Kobi.</figcaption>
+    </figure>
     <div class="jv">
       <div class="jv-player" id="jvPlayer">
         <div class="jv-ring"><button class="jv-play" id="jvPlay" type="button" aria-label="Ouvir a voz do J.A.R.V.I.S."><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="stop" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor"/></svg></button></div>
