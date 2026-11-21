@@ -1,17 +1,18 @@
 {
-  "version": "4.9.21",
-  "date": "2026-11-19",
-  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.21/Kobi-Setup.exe",
-  "macVersion": "4.9.21",
-  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.21/Kobi-Mac-arm64.dmg",
-  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.21/Kobi-Mac-x64.dmg",
+  "version": "4.9.22",
+  "date": "2026-11-21",
+  "url": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.22/Kobi-Setup.exe",
+  "macVersion": "4.9.22",
+  "urlMacArm64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.22/Kobi-Mac-arm64.dmg",
+  "urlMacX64": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.22/Kobi-Mac-x64.dmg",
   "page": "https://hiagorzandonadi.github.io/kobi/",
-  "linuxVersion": "4.9.21",
-  "urlLinux": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.21/Kobi-Linux.AppImage",
+  "linuxVersion": "4.9.22",
+  "urlLinux": "https://github.com/hiagorzandonadi/kobi/releases/download/v4.9.22/Kobi-Linux.AppImage",
   "notes": [
-    "Gravar a tela: grave a tela toda ou só uma área, com microfone, som do PC e webcam. Dá para ver a prévia da webcam e escolher o formato, a posição, o FPS, a resolução e o tipo do arquivo",
-    "Gaveta: arraste um vídeo do YouTube e escolha baixar o vídeo, só a música, a capa ou o link",
-    "Os avisos agora ficam no sininho, ao lado do seu perfil",
-    "Correções: o \"Meu Kobi\" volta a abrir, \"abrir YouTube Music\" abre o site certo e a voz neural ficou mais estável. Para quem não vê o entalho, tem o Modo de compatibilidade no ícone da bandeja"
+    "Voz do J.A.R.V.I.S.: uma voz realista e opcional para o Kobi. Compre pacotes de falas direto no app (Voz → J.A.R.V.I.S. → Comprar / ver uso) — sem mensalidade, os créditos não expiram e a voz liga sozinha assim que o pagamento cai. Ouça a amostra grátis antes.",
+    "Protocolo Despertar: diga \"bom dia\" com a voz do J.A.R.V.I.S. e ele apresenta o seu dia — sua música, o clima com o mapa, as tarefas e as notícias, em cartões animados.",
+    "Bata palma 2 vezes para começar a rotina (Voz → J.A.R.V.I.S. → ⚙).",
+    "Rotinas: várias frases de ativação (separe por vírgula) e o volume da música e do PC configuráveis na apresentação.",
+    "Melhorias e correções."
   ]
 }
