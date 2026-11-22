@@ -83,6 +83,12 @@
   label.f input.bad { border-color: #E0533D; box-shadow: 0 0 0 3px #E0533D22; }
   .go:disabled { opacity: .7; cursor: wait; }
   .cupom-ok { margin: 12px 0 0 38px; padding: 8px 12px; border-radius: 10px; background: var(--green-bg); color: var(--green-d); font-weight: 700; font-size: 13.5px; }
+  .next { display: block; width: 100%; margin-top: 16px; padding: 16px; font-size: 17px; }
+  .back { border: 0; background: none; padding: 4px 0; margin: 0 0 10px; font: 700 14px 'Plus Jakarta Sans', sans-serif; color: var(--mist); cursor: pointer; }
+  .back:hover { color: var(--ink); }
+  .who { margin: 0 0 4px; padding: 12px 14px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); font-size: 14px; color: var(--mist); }
+  .who b { color: var(--ink); }
+  section[hidden] { display: none; }
   .after { margin-top: 10px; text-align: center; font-size: 13px; color: var(--mist); }
 
   @media (max-width: 560px) {
@@ -99,17 +105,18 @@
 <body>
 <div class="top"><div class="in">
   <div class="brand"><i>• •</i>Kobi</div>
-  <div class="steps"><span class="cur"><b>1</b><em class="lbl" style="font-style:normal">Escolha</em></span><i></i><span><b>2</b><em class="lbl" style="font-style:normal">Pagamento</em></span></div>
+  <div class="steps"><span class="cur" id="st1"><b>1</b><em class="lbl" style="font-style:normal">Seus dados</em></span><i></i><span id="st2"><b>2</b><em class="lbl" style="font-style:normal">Seu pedido</em></span><i></i><span><b>3</b><em class="lbl" style="font-style:normal">Pagamento</em></span></div>
 </div></div>
 
 <div class="wrap">
+<section id="s1">
   <div class="hero">
     <h1>Falta pouco para o Kobi chegar no seu PC</h1>
-    <p class="sub">Preencha seus dados e escolha o que você quer. O pagamento é na próxima tela.</p>
+    <p class="sub">Preencha seus dados para continuar.</p>
   </div>
 
   <div class="card data">
-    <h2><span class="n">1</span>Seus dados</h2>
+    <h2>Seus dados</h2>
     <label class="f">Nome completo<input id="fNome" autocomplete="name" placeholder="Como você se chama?" maxlength="80"></label>
     <div class="row">
       <label class="f">E-mail<input id="fEmail" type="email" autocomplete="email" inputmode="email" placeholder="voce@email.com" maxlength="120"></label>
@@ -117,8 +124,14 @@
     </div>
     <p class="why">🔑 É com esse e-mail que você ativa o Kobi. O link para baixar aparece logo depois do pagamento.</p>
   </div>
+  <button class="go next" type="button" id="next">Próximo →</button>
+  <div class="err" id="err1" role="alert"></div>
+</section>
 
-  <h3 class="sec"><span class="n">2</span>O que vem no seu pedido</h3>
+<section id="s2" hidden>
+  <button class="back" type="button" id="back">← Voltar e editar meus dados</button>
+  <div class="who" id="who"></div>
+  <h3 class="sec">O que você recebe</h3>
 
   <div class="card">
     <div class="opt">
@@ -147,6 +160,7 @@
     </div>
   </div>
 
+  <h3 class="sec">Deseja incluir um extra opcional?</h3>
   <div class="card bump" id="bump">
     <div class="opt" id="bumpHead" role="checkbox" aria-checked="false" tabindex="0">
       <span class="chk"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -168,6 +182,7 @@
   </div>
   <div class="err" id="err" role="alert"></div>
   <div class="after">Na próxima tela, do <b>Mercado Pago</b>, você escolhe <b>PIX</b> ou <b>cartão em até 12x</b>.</div>
+</section>
 </div>
 
 <script>
@@ -213,8 +228,26 @@
     if (j.cupom) { var c = document.createElement('div'); c.className = 'cupom-ok'; c.textContent = '🎉 Cupom ' + j.cupom.code + ' aplicado: ' + j.cupom.pct + '% de desconto no Kobi'; $('pKobi').closest('.card').appendChild(c); }
     render();
   }).catch(function () {});
-  function erro(m, el) { $('err').textContent = m; if (el) { el.focus(); el.classList.add('bad'); } }
-  [].forEach.call(document.querySelectorAll('label.f input'), function (i) { i.addEventListener('input', function () { i.classList.remove('bad'); $('err').textContent = ''; }); });
+  // ── dois passos: 1) dados  2) o que você recebe + extra opcional + pagamento ──
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return '&#' + c.charCodeAt(0) + ';'; }); }
+  function passo(n) {
+    $('s1').hidden = n !== 1; $('s2').hidden = n !== 2;
+    $('st1').classList.toggle('cur', n === 1); $('st2').classList.toggle('cur', n === 2);
+    window.scrollTo(0, 0);
+  }
+  function erro1(m, el) { $('err1').textContent = m; if (el) { el.focus(); el.classList.add('bad'); } }
+  $('next').addEventListener('click', function () {
+    var nome = $('fNome').value.trim(), email = $('fEmail').value.trim();
+    if (nome.length < 2) return erro1('Digite seu nome completo.', $('fNome'));
+    if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(email)) return erro1('Confira o seu e-mail: é com ele que você ativa o Kobi.', $('fEmail'));
+    $('err1').textContent = '';
+    $('who').innerHTML = 'Para <b>' + esc(nome) + '</b> · ' + esc(email) + ($('fCel').value.trim() ? ' · ' + esc($('fCel').value.trim()) : '');
+    passo(2);
+  });
+  [].forEach.call(document.querySelectorAll('#s1 input'), function (i) { i.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); $('next').click(); } }); });
+  $('back').addEventListener('click', function () { passo(1); });
+  function erro(m, el) { if (el && el.closest('#s1')) { passo(1); return erro1(m, el); } $('err').textContent = m; if (el) { el.focus(); el.classList.add('bad'); } }
+  [].forEach.call(document.querySelectorAll('label.f input'), function (i) { i.addEventListener('input', function () { i.classList.remove('bad'); $('err').textContent = ''; $('err1').textContent = ''; }); });
   $('go').addEventListener('click', function () {
     var nome = $('fNome').value.trim(), email = $('fEmail').value.trim(), cel = $('fCel').value.trim();
     if (nome.length < 2) return erro('Digite seu nome.', $('fNome'));
