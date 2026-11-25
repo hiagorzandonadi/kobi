@@ -143,7 +143,7 @@
     </div>
   </div>
 
-  <h3 class="sec">Deseja incluir extras opcionais?</h3>
+  <h3 class="sec">Deseja incluir um extra opcional?</h3>
   <div class="card bump" id="bump">
     <div class="opt" id="bumpHead" role="checkbox" aria-checked="false" tabindex="0">
       <span class="chk"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -159,21 +159,12 @@
     <div class="fine"><b>Essa contagem de tempo é se você falar com ele todo dia</b>, mas geralmente dura bem mais, porque ninguém usa todos os dias. E se você não usar, o crédito continua lá: não expira e dura para sempre. Sem mensalidade. Se preferir, dá para comprar depois, dentro do app.</div>
   </div>
 
-  <div class="card bump" id="bump2" style="margin-top:14px">
-    <div class="opt" id="bump2Head" role="checkbox" aria-checked="false" tabindex="0">
-      <span class="chk"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <div><b>🚀 Acesso Antecipado às novidades</b><span class="tag">extra opcional</span>
-        <p>Receba as funções novas que estamos desenvolvendo antes de todo mundo, assim que cada uma fica pronta pra teste.</p></div>
-      <span class="price">+ R$ 32,90</span>
-    </div>
-  </div>
-
   <div class="bar">
     <div class="val"><small id="valLbl">Kobi</small><b id="tot">R$ 89,90</b></div>
     <button class="go" type="button" id="go">Ir para o pagamento →</button>
   </div>
   <div class="err" id="err" role="alert"></div>
-  <div class="after">Na próxima tela você coloca seus dados e escolhe <b>PIX</b> ou <b>cartão em até 12x</b>. O link para baixar chega no seu e-mail.</div>
+  <div class="after">Na próxima tela você coloca seus dados e escolhe <b>PIX</b> ou <b>cartão em até 12x</b>. Lá também dá para adicionar o <b>Acesso Antecipado</b> às novidades.</div>
 </section>
 </div>
 
@@ -211,21 +202,12 @@
     var p = au.play(); if (p && p.catch) p.catch(function () { b.classList.remove('playing'); });
   });
   // ── compra pela Cakto com o link de afiliado: cada combinação é uma oferta do Kobi na Cakto ──
-  var AFF = 'tpwmYhyD', ANT = 32.90, ant = false;
-  var LINKS = { 'n': 'kojjksr_1325563', '0': '3f7hogg', '1': '3a8cw28', '2': '3fdmdiy', 'nA': 'cfehuzd', '0A': 'wofh86t', '1A': 'fe8uyyc', '2A': '34ywn6p' };
-  function chave() { return (on ? String(pk) : 'n') + (ant ? 'A' : ''); }
-  var render0 = render;
-  render = function () {
-    render0();
-    $('bump2').classList.toggle('on', ant); $('bump2Head').setAttribute('aria-checked', ant);
-    $('tot').textContent = brl(KOBI + (on ? PACKS[pk].p : 0) + (ant ? ANT : 0));
-    $('valLbl').textContent = 'Kobi' + (on ? ' + voz do J.A.R.V.I.S. (' + PACKS[pk].n + ')' : '') + (ant ? ' + Acesso Antecipado' : '');
-  };
-  function toggle2() { ant = !ant; render(); }
-  $('bump2Head').addEventListener('click', toggle2);
-  $('bump2Head').addEventListener('keydown', function (e) { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle2(); } });
+  // o Acesso Antecipado não fica aqui: a Cakto já oferece ele no checkout (order bump), em qualquer oferta
+  var AFF = 'tpwmYhyD';
+  var LINKS = { 'n': 'kojjksr_1325563', '0': '3f7hogg', '1': '3a8cw28', '2': '3fdmdiy' };
+  function chave() { return on ? String(pk) : 'n'; }
   $('go').addEventListener('click', function () {
-    try { if (window.fbq) fbq('track', 'InitiateCheckout', { value: KOBI + (on ? PACKS[pk].p : 0) + (ant ? ANT : 0), currency: 'BRL' }); } catch (e) {}
+    try { if (window.fbq) fbq('track', 'InitiateCheckout', { value: KOBI + (on ? PACKS[pk].p : 0), currency: 'BRL' }); } catch (e) {}
     var b = $('go'); b.disabled = true; b.textContent = 'Abrindo o pagamento…';
     location.href = 'https://pay.cakto.com.br/' + LINKS[chave()] + '?affiliate=' + encodeURIComponent(AFF);
   });
