@@ -318,12 +318,13 @@
 #promo12 a.go{background:linear-gradient(135deg,#ffe08a,#f5c542 50%,#d99a1c);color:#111;border-radius:99px;padding:10px 18px;text-decoration:none;font-weight:900;white-space:nowrap;box-shadow:0 8px 22px -8px #f5c542;animation:bfPulse 2.2s infinite}
 @keyframes bfPulse{50%{box-shadow:0 8px 30px -4px #f5c542cc}}
 /* botões de compra no clima de Black Friday */
-[data-buy].bf-btn{background:linear-gradient(#0b0b0b,#0b0b0b) padding-box,linear-gradient(135deg,#ffe08a,#f5c542,#c9901b) border-box !important;border:2px solid transparent !important;color:#fff !important;box-shadow:0 10px 28px -10px #f5c542aa !important}
-[data-buy].bf-btn .bf-tag{display:inline-block;background:linear-gradient(135deg,#f5c542,#e8a317);color:#111;font-weight:900;font-size:11px;letter-spacing:.08em;border-radius:6px;padding:2px 6px;margin-right:6px;vertical-align:1px}
-[data-buy].bf-btn .promo-old{color:#9a9a9a !important}
-.promo-old{text-decoration:line-through;opacity:.75;font-weight:600;margin-right:4px}
-[data-buy].bf-btn .promo-new{color:#ffe08a;font-weight:900}
-@media(max-width:700px){header [data-buy].bf-btn .bf-tag{display:none}#promo12 .in{gap:10px;padding:10px 12px}#promo12 .bf{font-size:21px}#promo12 .pct{font-size:18px}#promo12 .preco{text-align:center}#promo12 .off{flex-direction:column;gap:6px}#promo12 .cd span{min-width:30px;padding:2px 5px}}
+[data-buy].bf-btn{position:relative;overflow:visible;background:linear-gradient(135deg,#ffe9a6 0%,#f5c542 45%,#e0a01e 100%) !important;color:#141414 !important;border:0 !important;box-shadow:0 10px 26px -10px #f5c542cc,inset 0 1px 0 #fff8 !important}
+[data-buy].bf-btn:hover{filter:brightness(1.05)}
+[data-buy].bf-btn::after{content:attr(data-bf);position:absolute;top:-10px;right:-8px;background:#111;color:#ffe08a;border:1px solid #f5c542;font:900 11px/1 'Plus Jakarta Sans',system-ui,sans-serif;letter-spacing:.04em;padding:4px 7px;border-radius:99px;box-shadow:0 4px 10px -4px #000}
+[data-buy].bf-btn .promo-old{color:#5c4a14 !important;opacity:.75}
+.promo-old{text-decoration:line-through;font-weight:600;margin-right:5px}
+[data-buy].bf-btn .promo-new{color:#111;font-weight:900}
+@media(max-width:700px){header [data-buy].bf-btn::after{display:none}#promo12 .in{gap:10px;padding:10px 12px}#promo12 .bf{font-size:21px}#promo12 .pct{font-size:18px}#promo12 .preco{text-align:center}#promo12 .off{flex-direction:column;gap:6px}#promo12 .cd span{min-width:30px;padding:2px 5px}}
 </style>
 <div id="promo12" hidden><div class="in">
  <div class="bf">BLACK FRIDAY<small id="bfSub">OFERTA RELÂMPAGO</small></div>
@@ -357,8 +358,8 @@
   function botoes(){
     [].forEach.call(document.querySelectorAll('[data-buy]'), function(b){
       if (b.classList.contains('bf-btn')) return;
-      b.classList.add('bf-btn');
-      b.innerHTML = '<span class="bf-tag">BLACK FRIDAY</span>' + b.innerHTML.replace(/R\$ ?89,90/, '<span class="promo-old">R$ 89,90</span><span class="promo-new">R$ ' + F.preco + '</span>');
+      b.classList.add('bf-btn'); b.setAttribute('data-bf', '-' + F.pct + '% BLACK');
+      b.innerHTML = b.innerHTML.replace(/R\$ ?89,90/, '<span class="promo-old">R$ 89,90</span><span class="promo-new">R$ ' + F.preco + '</span>');
     });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', botoes); else botoes();
