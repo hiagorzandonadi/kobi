@@ -294,6 +294,41 @@
   #buddy.chill .bd-body svg { transform: rotate(-24deg); transition: transform .4s .35s; }
 </style>
 
+
+<style id="promo12css">
+#promo12{position:relative;z-index:50;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:10px 16px;
+ background:linear-gradient(90deg,#3FB60F,#0EA5D8);color:#fff;font:700 15px/1.3 'Plus Jakarta Sans',system-ui,sans-serif;text-align:center;box-shadow:0 6px 20px -10px #0008}
+#promo12 b{font-weight:800}
+#promo12 .cd{display:inline-flex;gap:6px}
+#promo12 .cd span{background:#0003;border-radius:8px;padding:3px 8px;font-variant-numeric:tabular-nums;min-width:40px}
+#promo12 a{background:#fff;color:#121528;border-radius:99px;padding:6px 14px;text-decoration:none;font-weight:800;white-space:nowrap}
+.promo-old{text-decoration:line-through;opacity:.65;font-weight:600;margin-right:4px}
+@media(max-width:560px){#promo12{font-size:13px;gap:8px;padding:8px 10px}#promo12 .cd span{min-width:32px;padding:2px 6px}}
+</style>
+<div id="promo12" hidden>🔥 <span><b>12% OFF</b> no Kobi vitalício por tempo limitado: de <s>R$ 89,90</s> por <b>R$ 79,11</b></span>
+<span class="cd" id="promo12cd"></span><a href="comprar.html" id="promo12go">Garantir agora</a></div>
+<script>
+(function(){
+  var FIM = Date.parse('2026-11-27T23:00:00-03:00'), el = document.getElementById('promo12');
+  if (!el || Date.now() >= FIM) { if (el) el.remove(); return; }
+  el.hidden = false;
+  var go = document.getElementById('promo12go'); if (go) go.href = 'comprar.html' + location.search;
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function tick(){
+    var s = Math.max(0, Math.floor((FIM - Date.now()) / 1000));
+    if (!s) { el.remove(); return; }
+    var d = Math.floor(s / 86400), hh = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), ss = s % 60;
+    document.getElementById('promo12cd').innerHTML = (d ? '<span>' + d + 'd</span>' : '') + '<span>' + pad(hh) + 'h</span><span>' + pad(m) + 'm</span><span>' + pad(ss) + 's</span>';
+  }
+  tick(); setInterval(tick, 1000);
+  // preço novo nos botões e textos de compra (sem mexer no banner)
+  document.addEventListener('DOMContentLoaded', function(){
+    [].forEach.call(document.querySelectorAll('[data-buy]'), function(b){
+      if (b.innerHTML.indexOf('R$ 89,90') >= 0) b.innerHTML = b.innerHTML.replace('R$ 89,90', '<span class="promo-old">R$ 89,90</span>R$ 79,11');
+    });
+  });
+})();
+</script>
 <header class="nav"><div class="wrap">
   <a class="brand" href="#topo"><span id="logoKobi"></span>Kobi</a>
   <nav><a href="#demo">Demonstração</a><a href="#funcoes">Funções</a><a href="#jarvis">J.A.R.V.I.S.</a><a href="#instalar">Instalar</a><a href="#preco">Preço</a><a href="#duvidas">Dúvidas</a></nav>
