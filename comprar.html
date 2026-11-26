@@ -220,12 +220,12 @@
   });
   // ── compra de verdade: o servidor confere preço/cupom e cria o pagamento no Mercado Pago ──
   var API = 'https://kobi-licencas.hiagorzandonadi.workers.dev', IDS = ['basico', 'plus', 'pro'];
-  var qs = new URLSearchParams(location.search), CUPOM = (qs.get('cupom') || '').trim() || ([{ate:'2026-11-27T00:00:00-03:00',cupom:'BLACK17',pct:17,preco:'74,62',nome:'BLACK FRIDAY: 17% OFF só até meia-noite'},{ate:'2026-11-27T23:00:00-03:00',cupom:'BLACK12',pct:12,preco:'79,11',nome:'12% OFF por tempo limitado'}].filter(function(f){return Date.now() < Date.parse(f.ate)})[0] || {}).cupom || ''; // promo por fases
+  var qs = new URLSearchParams(location.search), CUPOM = (qs.get('cupom') || '').trim() || ([{ate:'2026-11-27T10:00:00-03:00',mostra:'2026-11-27T10:00:00-03:00',cupom:'BLACK30',pct:30,preco:'62,90',sub:'SÓ ATÉ AMANHÃ 10H'}].filter(function(f){return Date.now() < Date.parse(f.ate)})[0] || {}).cupom || ''; // promo por fases
   fetch(API + '/kobi/precos' + (CUPOM ? '?cupom=' + encodeURIComponent(CUPOM) : ''), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
     if (!j || !j.ok) return;
     KOBI = j.kobi;
     $('pKobi').innerHTML = j.cupom ? '<s style="color:var(--mist);font-weight:600">' + brl(j.cheio) + '</s> ' + brl(j.kobi) : brl(j.kobi);
-    if (j.cupom) { var c = document.createElement('div'); c.className = 'cupom-ok'; c.textContent = '🎉 Cupom ' + j.cupom.code + ' aplicado: ' + j.cupom.pct + '% de desconto no Kobi'; $('pKobi').closest('.card').appendChild(c); }
+    if (j.cupom) { var c = document.createElement('div'); c.className = 'cupom-ok'; c.textContent = '🎉 Cupom ' + j.cupom.code + ' aplicado: ' + Math.round(j.cupom.pct) + '% de desconto no Kobi'; $('pKobi').closest('.card').appendChild(c); }
     render();
   }).catch(function () {});
   // ── dois passos: 1) dados  2) o que você recebe + extra opcional + pagamento ──
