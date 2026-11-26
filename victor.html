@@ -294,7 +294,76 @@
   #buddy.chill .bd-body svg { transform: rotate(-24deg); transition: transform .4s .35s; }
 </style>
 
-<header class="nav"><div class="wrap">
+<style id="promo12css">
+#promo12{position:relative;z-index:50;overflow:hidden;color:#fff;font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+ background:radial-gradient(600px 160px at 15% 0%,#3a2a00 0%,transparent 70%),radial-gradient(500px 160px at 90% 100%,#2b1d00 0%,transparent 70%),#050505;
+ border-bottom:1px solid #f5c54255;box-shadow:0 10px 30px -12px #000c}
+#promo12::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 22px,#ffffff06 22px 23px);pointer-events:none}
+#promo12::after{content:"";position:absolute;top:0;left:-40%;width:30%;height:100%;background:linear-gradient(90deg,transparent,#ffe08a22,transparent);transform:skewX(-20deg);animation:bfShine 4.5s infinite;pointer-events:none}
+@keyframes bfShine{0%{left:-40%}55%,100%{left:130%}}
+#promo12 .in{position:relative;max-width:1180px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;text-align:center}
+#promo12 .bf{font-weight:900;font-size:26px;letter-spacing:.06em;line-height:1;white-space:nowrap;
+ background:linear-gradient(180deg,#fff3c4 0%,#f5c542 45%,#c9901b 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 24px #f5c54233}
+#promo12 .bf small{display:block;font-size:10.5px;letter-spacing:.32em;color:#f5c542;-webkit-text-fill-color:#f5c542;margin-top:4px;font-weight:800}
+#promo12 .off{display:flex;align-items:center;gap:10px}
+#promo12 .pct{background:linear-gradient(135deg,#f5c542,#e8a317);color:#111;font-weight:900;font-size:22px;border-radius:12px;padding:6px 11px;box-shadow:0 6px 18px -6px #f5c542aa;transform:rotate(-3deg)}
+#promo12 .preco{font-size:15px;line-height:1.25;text-align:left}
+#promo12 .preco s{color:#9a9a9a}
+#promo12 .preco b{font-size:19px;color:#ffe08a}
+#promo12 .ate{font-size:13.5px;font-weight:700;color:#ffe08a;display:flex;flex-direction:column;gap:5px;align-items:center}
+#promo12 .ate .quando{color:#fff;background:#ffffff10;border:1px solid #f5c54266;border-radius:99px;padding:4px 12px;white-space:nowrap}
+#promo12 .cd{display:inline-flex;gap:5px}
+#promo12 .cd span{background:#111;border:1px solid #f5c54255;color:#ffe08a;border-radius:8px;padding:2px 7px;font-variant-numeric:tabular-nums;font-weight:800;min-width:38px}
+#promo12 a.go{background:linear-gradient(135deg,#ffe08a,#f5c542 50%,#d99a1c);color:#111;border-radius:99px;padding:10px 18px;text-decoration:none;font-weight:900;white-space:nowrap;box-shadow:0 8px 22px -8px #f5c542;animation:bfPulse 2.2s infinite}
+@keyframes bfPulse{50%{box-shadow:0 8px 30px -4px #f5c542cc}}
+/* botões de compra no clima de Black Friday */
+[data-buy].bf-btn{position:relative;overflow:visible;background:linear-gradient(135deg,#ffe9a6 0%,#f5c542 45%,#e0a01e 100%) !important;color:#141414 !important;border:0 !important;box-shadow:0 10px 26px -10px #f5c542cc,inset 0 1px 0 #fff8 !important}
+[data-buy].bf-btn:hover{filter:brightness(1.05)}
+[data-buy].bf-btn::after{content:attr(data-bf);position:absolute;top:-10px;right:-8px;background:#111;color:#ffe08a;border:1px solid #f5c542;font:900 11px/1 'Plus Jakarta Sans',system-ui,sans-serif;letter-spacing:.04em;padding:4px 7px;border-radius:99px;box-shadow:0 4px 10px -4px #000}
+[data-buy].bf-btn .promo-old{color:#5c4a14 !important;opacity:.75}
+.promo-old{text-decoration:line-through;font-weight:600;margin-right:5px}
+[data-buy].bf-btn .promo-new{color:#111;font-weight:900}
+@media(max-width:700px){header [data-buy].bf-btn::after{display:none}#promo12 .in{gap:10px;padding:10px 12px}#promo12 .bf{font-size:21px}#promo12 .pct{font-size:18px}#promo12 .preco{text-align:center}#promo12 .off{flex-direction:column;gap:6px}#promo12 .cd span{min-width:30px;padding:2px 5px}}
+</style>
+<div id="promo12" hidden><div class="in">
+ <div class="bf">BLACK FRIDAY<small id="bfSub">OFERTA RELÂMPAGO</small></div>
+ <div class="off"><span class="pct" id="bfPct">-17%</span><div class="preco">Kobi vitalício<br>de <s>R$ 89,90</s> por <b id="bfPreco">R$ 74,62</b></div></div>
+ <div class="ate"><span class="quando" id="bfQuando">⏰ Termina hoje</span><span class="cd" id="promo12cd"></span></div>
+ <a href="victor-comprar.html" id="promo12go" class="go">🖤 Garantir na Black Friday</a>
+</div></div>
+<script>
+(function(){
+  var FASES = [{ate:'2026-11-27T10:00:00-03:00',mostra:'2026-11-27T10:00:00-03:00',cupom:'BLACK30',pct:30,preco:'62,93',sub:'SÓ ATÉ AMANHÃ 10H'}];
+  var el = document.getElementById('promo12');
+  var F = FASES.filter(function(f){ return Date.now() < Date.parse(f.ate); })[0];
+  if (!el || !F) { if (el) el.remove(); return; }
+  var FIM = Date.parse(F.ate), M = new Date(Date.parse(F.mostra));
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  var hoje = new Date(); var dia = new Date(M.getFullYear(), M.getMonth(), M.getDate()), h0 = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate());
+  var dd = Math.round((dia - h0) / 864e5), quando = dd === 0 ? 'hoje' : dd === 1 ? 'amanhã' : 'dia';
+  document.getElementById('bfQuando').textContent = '⏰ Termina ' + quando + ', ' + pad(M.getDate()) + '/' + pad(M.getMonth() + 1) + ', às ' + pad(M.getHours()) + ':' + pad(M.getMinutes());
+  document.getElementById('bfPct').textContent = '-' + F.pct + '%';
+  document.getElementById('bfPreco').textContent = 'R$ ' + F.preco;
+  document.getElementById('bfSub').textContent = F.sub;
+  el.hidden = false;
+  var go = document.getElementById('promo12go'); if (go) go.href = 'victor-comprar.html' + location.search;
+  function tick(){
+    var s = Math.max(0, Math.floor((FIM - Date.now()) / 1000));
+    if (!s) { location.reload(); return; }
+    var d = Math.floor(s / 86400), hh = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), ss = s % 60;
+    document.getElementById('promo12cd').innerHTML = (d ? '<span>' + d + 'd</span>' : '') + '<span>' + pad(hh) + 'h</span><span>' + pad(m) + 'm</span><span>' + pad(ss) + 's</span>';
+  }
+  tick(); setInterval(tick, 1000);
+  function botoes(){
+    [].forEach.call(document.querySelectorAll('[data-buy]'), function(b){
+      if (b.classList.contains('bf-btn')) return;
+      b.classList.add('bf-btn'); b.setAttribute('data-bf', '-' + F.pct + '% BLACK');
+      b.innerHTML = b.innerHTML.replace(/R\$ ?89,90/, '<span class="promo-old">R$ 89,90</span><span class="promo-new">R$ ' + F.preco + '</span>');
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', botoes); else botoes();
+})();
+</script><header class="nav"><div class="wrap">
   <a class="brand" href="#topo"><span id="logoKobi"></span>Kobi</a>
   <nav><a href="#demo">Demonstração</a><a href="#funcoes">Funções</a><a href="#jarvis">J.A.R.V.I.S.</a><a href="#instalar">Instalar</a><a href="#preco">Preço</a><a href="#duvidas">Dúvidas</a></nav>
   <button class="btn btn-primary" data-buy>Comprar · R$ 89,90</button>
