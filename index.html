@@ -305,18 +305,21 @@
 .promo-old{text-decoration:line-through;opacity:.65;font-weight:600;margin-right:4px}
 @media(max-width:560px){#promo12{font-size:13px;gap:8px;padding:8px 10px}#promo12 .cd span{min-width:32px;padding:2px 6px}}
 </style>
-<div id="promo12" hidden>🔥 <span><b>12% OFF</b> no Kobi vitalício por tempo limitado: de <s>R$ 89,90</s> por <b>R$ 79,11</b></span>
+<div id="promo12" hidden>🔥 <span id="promo12txt"></span>
 <span class="cd" id="promo12cd"></span><a href="comprar.html" id="promo12go">Garantir agora</a></div>
 <script>
 (function(){
-  var FIM = Date.parse('2026-11-27T23:00:00-03:00'), el = document.getElementById('promo12');
-  if (!el || Date.now() >= FIM) { if (el) el.remove(); return; }
+  var FASES = [{ate:'2026-11-27T00:00:00-03:00',cupom:'BLACK17',pct:17,preco:'74,62',nome:'BLACK FRIDAY: 17% OFF só até meia-noite'},{ate:'2026-11-27T23:00:00-03:00',cupom:'BLACK12',pct:12,preco:'79,11',nome:'12% OFF por tempo limitado'}], el = document.getElementById('promo12');
+  var F = FASES.filter(function(f){ return Date.now() < Date.parse(f.ate); })[0];
+  if (!el || !F) { if (el) el.remove(); return; }
+  var FIM = Date.parse(F.ate);
+  document.getElementById('promo12txt').innerHTML = '<b>' + F.nome + '</b>: de <s>R$ 89,90</s> por <b>R$ ' + F.preco + '</b>';
   el.hidden = false;
   var go = document.getElementById('promo12go'); if (go) go.href = 'comprar.html' + location.search;
   function pad(n){ return (n < 10 ? '0' : '') + n; }
   function tick(){
     var s = Math.max(0, Math.floor((FIM - Date.now()) / 1000));
-    if (!s) { el.remove(); return; }
+    if (!s) { location.reload(); return; }
     var d = Math.floor(s / 86400), hh = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), ss = s % 60;
     document.getElementById('promo12cd').innerHTML = (d ? '<span>' + d + 'd</span>' : '') + '<span>' + pad(hh) + 'h</span><span>' + pad(m) + 'm</span><span>' + pad(ss) + 's</span>';
   }
@@ -324,7 +327,7 @@
   // preço novo nos botões e textos de compra (sem mexer no banner)
   document.addEventListener('DOMContentLoaded', function(){
     [].forEach.call(document.querySelectorAll('[data-buy]'), function(b){
-      if (b.innerHTML.indexOf('R$ 89,90') >= 0) b.innerHTML = b.innerHTML.replace('R$ 89,90', '<span class="promo-old">R$ 89,90</span>R$ 79,11');
+      if (b.innerHTML.indexOf('R$ 89,90') >= 0) b.innerHTML = b.innerHTML.replace('R$ 89,90', '<span class="promo-old">R$ 89,90</span>R$ ' + F.preco);
     });
   });
 })();
