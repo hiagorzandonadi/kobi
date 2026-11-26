@@ -296,27 +296,57 @@
 
 
 <style id="promo12css">
-#promo12{position:relative;z-index:50;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:10px 16px;
- background:linear-gradient(90deg,#3FB60F,#0EA5D8);color:#fff;font:700 15px/1.3 'Plus Jakarta Sans',system-ui,sans-serif;text-align:center;box-shadow:0 6px 20px -10px #0008}
-#promo12 b{font-weight:800}
-#promo12 .cd{display:inline-flex;gap:6px}
-#promo12 .cd span{background:#0003;border-radius:8px;padding:3px 8px;font-variant-numeric:tabular-nums;min-width:40px}
-#promo12 a{background:#fff;color:#121528;border-radius:99px;padding:6px 14px;text-decoration:none;font-weight:800;white-space:nowrap}
-.promo-old{text-decoration:line-through;opacity:.65;font-weight:600;margin-right:4px}
-@media(max-width:560px){#promo12{font-size:13px;gap:8px;padding:8px 10px}#promo12 .cd span{min-width:32px;padding:2px 6px}}
+#promo12{position:relative;z-index:50;overflow:hidden;color:#fff;font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+ background:radial-gradient(600px 160px at 15% 0%,#3a2a00 0%,transparent 70%),radial-gradient(500px 160px at 90% 100%,#2b1d00 0%,transparent 70%),#050505;
+ border-bottom:1px solid #f5c54255;box-shadow:0 10px 30px -12px #000c}
+#promo12::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 22px,#ffffff06 22px 23px);pointer-events:none}
+#promo12::after{content:"";position:absolute;top:0;left:-40%;width:30%;height:100%;background:linear-gradient(90deg,transparent,#ffe08a22,transparent);transform:skewX(-20deg);animation:bfShine 4.5s infinite;pointer-events:none}
+@keyframes bfShine{0%{left:-40%}55%,100%{left:130%}}
+#promo12 .in{position:relative;max-width:1180px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;text-align:center}
+#promo12 .bf{font-weight:900;font-size:26px;letter-spacing:.06em;line-height:1;white-space:nowrap;
+ background:linear-gradient(180deg,#fff3c4 0%,#f5c542 45%,#c9901b 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 24px #f5c54233}
+#promo12 .bf small{display:block;font-size:10.5px;letter-spacing:.32em;color:#f5c542;-webkit-text-fill-color:#f5c542;margin-top:4px;font-weight:800}
+#promo12 .off{display:flex;align-items:center;gap:10px}
+#promo12 .pct{background:linear-gradient(135deg,#f5c542,#e8a317);color:#111;font-weight:900;font-size:22px;border-radius:12px;padding:6px 11px;box-shadow:0 6px 18px -6px #f5c542aa;transform:rotate(-3deg)}
+#promo12 .preco{font-size:15px;line-height:1.25;text-align:left}
+#promo12 .preco s{color:#9a9a9a}
+#promo12 .preco b{font-size:19px;color:#ffe08a}
+#promo12 .ate{font-size:13.5px;font-weight:700;color:#ffe08a;display:flex;flex-direction:column;gap:5px;align-items:center}
+#promo12 .ate .quando{color:#fff;background:#ffffff10;border:1px solid #f5c54266;border-radius:99px;padding:4px 12px;white-space:nowrap}
+#promo12 .cd{display:inline-flex;gap:5px}
+#promo12 .cd span{background:#111;border:1px solid #f5c54255;color:#ffe08a;border-radius:8px;padding:2px 7px;font-variant-numeric:tabular-nums;font-weight:800;min-width:38px}
+#promo12 a.go{background:linear-gradient(135deg,#ffe08a,#f5c542 50%,#d99a1c);color:#111;border-radius:99px;padding:10px 18px;text-decoration:none;font-weight:900;white-space:nowrap;box-shadow:0 8px 22px -8px #f5c542;animation:bfPulse 2.2s infinite}
+@keyframes bfPulse{50%{box-shadow:0 8px 30px -4px #f5c542cc}}
+/* botões de compra no clima de Black Friday */
+[data-buy].bf-btn{background:linear-gradient(#0b0b0b,#0b0b0b) padding-box,linear-gradient(135deg,#ffe08a,#f5c542,#c9901b) border-box !important;border:2px solid transparent !important;color:#fff !important;box-shadow:0 10px 28px -10px #f5c542aa !important}
+[data-buy].bf-btn .bf-tag{display:inline-block;background:linear-gradient(135deg,#f5c542,#e8a317);color:#111;font-weight:900;font-size:11px;letter-spacing:.08em;border-radius:6px;padding:2px 6px;margin-right:6px;vertical-align:1px}
+[data-buy].bf-btn .promo-old{color:#9a9a9a !important}
+.promo-old{text-decoration:line-through;opacity:.75;font-weight:600;margin-right:4px}
+[data-buy].bf-btn .promo-new{color:#ffe08a;font-weight:900}
+@media(max-width:700px){header [data-buy].bf-btn .bf-tag{display:none}#promo12 .in{gap:10px;padding:10px 12px}#promo12 .bf{font-size:21px}#promo12 .pct{font-size:18px}#promo12 .preco{text-align:center}#promo12 .off{flex-direction:column;gap:6px}#promo12 .cd span{min-width:30px;padding:2px 5px}}
 </style>
-<div id="promo12" hidden>🔥 <span id="promo12txt"></span>
-<span class="cd" id="promo12cd"></span><a href="comprar.html" id="promo12go">Garantir agora</a></div>
+<div id="promo12" hidden><div class="in">
+ <div class="bf">BLACK FRIDAY<small id="bfSub">OFERTA RELÂMPAGO</small></div>
+ <div class="off"><span class="pct" id="bfPct">-17%</span><div class="preco">Kobi vitalício<br>de <s>R$ 89,90</s> por <b id="bfPreco">R$ 74,62</b></div></div>
+ <div class="ate"><span class="quando" id="bfQuando">⏰ Termina hoje</span><span class="cd" id="promo12cd"></span></div>
+ <a href="comprar.html" id="promo12go" class="go">🖤 Garantir na Black Friday</a>
+</div></div>
 <script>
 (function(){
-  var FASES = [{ate:'2026-11-27T00:00:00-03:00',cupom:'BLACK17',pct:17,preco:'74,62',nome:'BLACK FRIDAY: 17% OFF só até meia-noite'},{ate:'2026-11-27T23:00:00-03:00',cupom:'BLACK12',pct:12,preco:'79,11',nome:'12% OFF por tempo limitado'}], el = document.getElementById('promo12');
+  var FASES = [{ate:'2026-11-27T00:00:00-03:00',mostra:'2026-11-26T23:59:00-03:00',pct:17,preco:'74,62',sub:'SÓ ATÉ MEIA-NOITE'},{ate:'2026-11-27T23:00:00-03:00',mostra:'2026-11-27T23:00:00-03:00',pct:12,preco:'79,11',sub:'ÚLTIMA CHANCE'}];
+  var el = document.getElementById('promo12');
   var F = FASES.filter(function(f){ return Date.now() < Date.parse(f.ate); })[0];
   if (!el || !F) { if (el) el.remove(); return; }
-  var FIM = Date.parse(F.ate);
-  document.getElementById('promo12txt').innerHTML = '<b>' + F.nome + '</b>: de <s>R$ 89,90</s> por <b>R$ ' + F.preco + '</b>';
+  var FIM = Date.parse(F.ate), M = new Date(Date.parse(F.mostra));
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  var hoje = new Date(); var dia = new Date(M.getFullYear(), M.getMonth(), M.getDate()), h0 = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate());
+  var dd = Math.round((dia - h0) / 864e5), quando = dd === 0 ? 'hoje' : dd === 1 ? 'amanhã' : 'dia';
+  document.getElementById('bfQuando').textContent = '⏰ Termina ' + quando + ', ' + pad(M.getDate()) + '/' + pad(M.getMonth() + 1) + ', às ' + pad(M.getHours()) + ':' + pad(M.getMinutes());
+  document.getElementById('bfPct').textContent = '-' + F.pct + '%';
+  document.getElementById('bfPreco').textContent = 'R$ ' + F.preco;
+  document.getElementById('bfSub').textContent = F.sub;
   el.hidden = false;
   var go = document.getElementById('promo12go'); if (go) go.href = 'comprar.html' + location.search;
-  function pad(n){ return (n < 10 ? '0' : '') + n; }
   function tick(){
     var s = Math.max(0, Math.floor((FIM - Date.now()) / 1000));
     if (!s) { location.reload(); return; }
@@ -324,12 +354,14 @@
     document.getElementById('promo12cd').innerHTML = (d ? '<span>' + d + 'd</span>' : '') + '<span>' + pad(hh) + 'h</span><span>' + pad(m) + 'm</span><span>' + pad(ss) + 's</span>';
   }
   tick(); setInterval(tick, 1000);
-  // preço novo nos botões e textos de compra (sem mexer no banner)
-  document.addEventListener('DOMContentLoaded', function(){
+  function botoes(){
     [].forEach.call(document.querySelectorAll('[data-buy]'), function(b){
-      if (b.innerHTML.indexOf('R$ 89,90') >= 0) b.innerHTML = b.innerHTML.replace('R$ 89,90', '<span class="promo-old">R$ 89,90</span>R$ ' + F.preco);
+      if (b.classList.contains('bf-btn')) return;
+      b.classList.add('bf-btn');
+      b.innerHTML = '<span class="bf-tag">BLACK FRIDAY</span>' + b.innerHTML.replace(/R\$ ?89,90/, '<span class="promo-old">R$ 89,90</span><span class="promo-new">R$ ' + F.preco + '</span>');
     });
-  });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', botoes); else botoes();
 })();
 </script>
 <header class="nav"><div class="wrap">
